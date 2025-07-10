@@ -1,0 +1,1400 @@
+{
+  "Python": {
+    "easy": [
+      {
+        "language": "Python",
+        "bugType": "Indentation Error",
+        "description": "Incorrect indentation in function (Lang: Python, Q1)",
+        "buggyCode": "def greet_user(name):\nprint(f\"Hello, {name}!\")\nprint(\"Welcome to our program!\")",
+        "correctCode": "def greet_user(name):\n    print(f\"Hello, {name}!\")\n    print(\"Welcome to our program!\")",
+        "hint": "Python requires proper indentation for function bodies"
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Wrong comparison operator (Lang: Python, Q2)",
+        "buggyCode": "def can_vote(age):\n    if age > 18:\n        return True\n    return False",
+        "correctCode": "def can_vote(age):\n    if age >= 18:\n        return True\n    return False",
+        "hint": "Should people exactly 18 years old be able to vote?"
+      },
+      {
+        "language": "Python",
+        "bugType": "Syntax Error",
+        "description": "Missing colon after if statement (Lang: Python, Q3)",
+        "buggyCode": "def check_positive(num):\n    if num > 0\n        return \"Positive\"\n    else:\n        return \"Not positive\"",
+        "correctCode": "def check_positive(num):\n    if num > 0:\n        return \"Positive\"\n    else:\n        return \"Not positive\"",
+        "hint": "Every 'if' statement requires a colon at the end of its condition."
+      },
+      {
+        "language": "Python",
+        "bugType": "TypeError",
+        "description": "Concatenating string with integer (Lang: Python, Q4)",
+        "buggyCode": "age = 30\nmessage = \"I am \" + age + \" years old.\"",
+        "correctCode": "age = 30\nmessage = \"I am \" + str(age) + \" years old.\"",
+        "hint": "You cannot concatenate a string and an integer directly. Convert the integer to a string first."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Dangerous mutable default parameter (Lang: Python, Q5)",
+        "buggyCode": "def add_item(item, shopping_list=[]):\n    shopping_list.append(item)\n    return shopping_list",
+        "correctCode": "def add_item(item, shopping_list=None):\n    if shopping_list is None:\n        shopping_list = []\n    shopping_list.append(item)\n    return shopping_list",
+        "hint": "Mutable default arguments are created only once when the function is defined. Use 'None' as default and initialize inside the function."
+      },
+      {
+        "language": "Python",
+        "bugType": "Indentation Error",
+        "description": "Incorrect indentation in function (Lang: Python, Q6)",
+        "buggyCode": "def greet_user(name):\nprint(f\"Hello, {name}!\")",
+        "correctCode": "def greet_user(name):\n    print(f\"Hello, {name}!\")",
+        "hint": "The print statement needs to be indented to be part of the function body."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Wrong comparison operator (Lang: Python, Q7)",
+        "buggyCode": "def can_vote(age):\n    if age > 18:\n        return True\n    return False",
+        "correctCode": "def can_vote(age):\n    if age >= 18:\n        return True\n    return False",
+        "hint": "Consider the edge case for people who are exactly 18 years old."
+      },
+      {
+        "language": "Python",
+        "bugType": "Syntax Error",
+        "description": "Missing colon after if statement (Lang: Python, Q8)",
+        "buggyCode": "def check_positive(num):\n    if num > 0\n        return \"Positive\"",
+        "correctCode": "def check_positive(num):\n    if num > 0:\n        return \"Positive\"",
+        "hint": "Conditional statements like 'if' require a colon at the end of the line."
+      },
+      {
+        "language": "Python",
+        "bugType": "TypeError",
+        "description": "Concatenating string with integer (Lang: Python, Q9)",
+        "buggyCode": "value = 10\ntext = \"Number: \" + value",
+        "correctCode": "value = 10\ntext = \"Number: \" + str(value)",
+        "hint": "Implicit conversion between string and integer for concatenation is not allowed in Python."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Dangerous mutable default parameter (Lang: Python, Q10)",
+        "buggyCode": "def log_message(msg, logs=[]):\n    logs.append(msg)\n    return logs",
+        "correctCode": "def log_message(msg, logs=None):\n    if logs is None:\n        logs = []\n    logs.append(msg)\n    return logs",
+        "hint": "Using mutable defaults can lead to unexpected state sharing across function calls."
+      },
+      {
+        "language": "Python",
+        "bugType": "Syntax Error",
+        "description": "Missing parenthesis in print (Lang: Python, Q11)",
+        "buggyCode": "print \"Hello Python\"",
+        "correctCode": "print(\"Hello Python\")",
+        "hint": "In Python 3, 'print' is a function and requires parentheses."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Incorrect loop range (Lang: Python, Q12)",
+        "buggyCode": "for i in range(5):\n    print(i)",
+        "correctCode": "for i in range(1, 6):\n    print(i)",
+        "hint": "The 'range' function is exclusive of the stop value and starts from 0 by default. Adjust parameters to get desired numbers."
+      },
+      {
+        "language": "Python",
+        "bugType": "Indentation Error",
+        "description": "Missing indentation for class method (Lang: Python, Q13)",
+        "buggyCode": "class MyClass:\ndef my_method():\n    pass",
+        "correctCode": "class MyClass:\n    def my_method():\n        pass",
+        "hint": "Methods inside a class must be indented."
+      },
+      {
+        "language": "Python",
+        "bugType": "KeyError",
+        "description": "Incorrect dictionary key access (Lang: Python, Q14)",
+        "buggyCode": "data = {'name': 'Alice'}\nprint(data['Name'])",
+        "correctCode": "data = {'name': 'Alice'}\nprint(data['name'])",
+        "hint": "Dictionary keys are case-sensitive."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Using list comprehension for mutable default (Lang: Python, Q15)",
+        "buggyCode": "def process_data(data, config={}):\n    config['processed'] = True\n    return config",
+        "correctCode": "def process_data(data, config=None):\n    if config is None:\n        config = {}\n    config['processed'] = True\n    return config",
+        "hint": "Default arguments are evaluated once. Use 'None' as a default for mutable objects."
+      },
+      {
+        "language": "Python",
+        "bugType": "Syntax Error",
+        "description": "Unmatched quote (Lang: Python, Q16)",
+        "buggyCode": "print(\"This is a string')",
+        "correctCode": "print('This is a string')",
+        "hint": "Ensure that string literals are enclosed with matching quotation marks (single or double)."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Incorrect boolean logic (Lang: Python, Q17)",
+        "buggyCode": "is_admin = False\nis_editor = True\nif is_admin or is_editor and not is_admin:\n    print('Access granted')",
+        "correctCode": "is_admin = False\nis_editor = True\nif is_admin or (is_editor and not is_admin):\n    print('Access granted')",
+        "hint": "Understand operator precedence. 'and' has higher precedence than 'or'. Use parentheses to clarify logic."
+      },
+      {
+        "language": "Python",
+        "bugType": "Indentation Error",
+        "description": "Incorrect indentation after function call (Lang: Python, Q18)",
+        "buggyCode": "if True:\n    print('Inside if')\n    print('Outside if')",
+        "correctCode": "if True:\n    print('Inside if')\nprint('Outside if')",
+        "hint": "Statements not intended to be part of the 'if' block should not be indented under it."
+      },
+      {
+        "language": "Python",
+        "bugType": "TypeError",
+        "description": "Attempting to modify a tuple (Lang: Python, Q19)",
+        "buggyCode": "my_tuple = (1, 2, 3)\nmy_tuple[0] = 4",
+        "correctCode": "my_list = [1, 2, 3]\nmy_list[0] = 4",
+        "hint": "Tuples are immutable; their elements cannot be changed after creation. Use a list if you need mutability."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Replicated Mutable Default Argument (Lang: Python, Q20)",
+        "buggyCode": "def process_data(data, config={}):\n    config['processed'] = True\n    return config",
+        "correctCode": "def process_data(data, config=None):\n    if config is None:\n        config = {}\n    config['processed'] = True\n    return config",
+        "hint": "Mutable default arguments are instantiated once. Subsequent calls share the same default object, leading to unexpected behavior."
+      }
+    ],
+    "medium": [
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Dangerous mutable default parameter (Lang: Python, Q1)",
+        "buggyCode": "def add_item(item, shopping_list=[]):\n    shopping_list.append(item)\n    return shopping_list",
+        "correctCode": "def add_item(item, shopping_list=None):\n    if shopping_list is None:\n        shopping_list = []\n    shopping_list.append(item)\n    return shopping_list",
+        "hint": "Mutable default arguments are created only once. Subsequent calls to the function will use the same list object."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Late binding in loops with closures (Lang: Python, Q2)",
+        "buggyCode": "funcs = []\nfor i in range(3):\n    def f():\n        print(i)\n    funcs.append(f)\nfor f in funcs:\n    f()",
+        "correctCode": "funcs = []\nfor i in range(3):\n    def f(j=i):\n        print(j)\n    funcs.append(f)\nfor f in funcs:\n    f()",
+        "hint": "Python's closures bind to variables by name, not by value, meaning 'i' is looked up when 'f' is called, not when 'f' is defined."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Modifying a shallow copy (Lang: Python, Q3)",
+        "buggyCode": "import copy\noriginal = [[1, 2], [3, 4]]\ncopy_shallow = copy.copy(original)\ncopy_shallow[0][0] = 99",
+        "correctCode": "import copy\noriginal = [[1, 2], [3, 4]]\ncopy_deep = copy.deepcopy(original)\ncopy_deep[0][0] = 99",
+        "hint": "A shallow copy creates a new compound object, but populates it with references to the objects found in the original. Use a deep copy for nested mutable structures."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Dangerous mutable default parameter (Lang: Python, Q4)",
+        "buggyCode": "def cache_result(arg, cache={}):\n    if arg in cache:\n        return cache[arg]\n    result = arg * 2\n    cache[arg] = result\n    return result",
+        "correctCode": "def cache_result(arg, cache=None):\n    if cache is None:\n        cache = {}\n    if arg in cache:\n        return cache[arg]\n    result = arg * 2\n    cache[arg] = result\n    return result",
+        "hint": "The default dictionary is created once. All calls to the function will share the same cache dictionary."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Late binding in loops with closures (Lang: Python, Q5)",
+        "buggyCode": "actions = []\nfor x in [1, 2, 3]:\n    actions.append(lambda: x * 2)\nprint([action() for action in actions])",
+        "correctCode": "actions = []\nfor x in [1, 2, 3]:\n    actions.append(lambda val=x: val * 2)\nprint([action() for action in actions])",
+        "hint": "Lambda functions capture the variable by reference, not by value. The value of 'x' is determined when the lambda is called, not when it's defined."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Modifying a shallow copy (Lang: Python, Q6)",
+        "buggyCode": "import copy\nlist_of_lists = [[1], [2], [3]]\nshallow_copy_list = copy.copy(list_of_lists)\nshallow_copy_list[0].append(9)",
+        "correctCode": "import copy\nlist_of_lists = [[1], [2], [3]]\ndeep_copy_list = copy.deepcopy(list_of_lists)\ndeep_copy_list[0].append(9)",
+        "hint": "Shallow copy only copies the references of the nested objects. Changes to mutable nested objects will affect both the original and the shallow copy."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Dangerous mutable default parameter (Lang: Python, Q7)",
+        "buggyCode": "def process_names(name, processed_names=[]):\n    processed_names.append(name.upper())\n    return processed_names",
+        "correctCode": "def process_names(name, processed_names=None):\n    if processed_names is None:\n        processed_names = []\n    processed_names.append(name.upper())\n    return processed_names",
+        "hint": "Default arguments are evaluated only once, so a mutable default like a list will persist across calls."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Late binding in loops with closures (Lang: Python, Q8)",
+        "buggyCode": "def make_multipliers():\n    return [lambda x: i * x for i in range(4)]\nmultipliers = make_multipliers()\nprint([m(2) for m in multipliers])",
+        "correctCode": "def make_multipliers():\n    return [lambda x, i=i: i * x for i in range(4)]\nmultipliers = make_multipliers()\nprint([m(2) for m in multipliers])",
+        "hint": "When the lambda functions are called, 'i' will have its last value from the loop. Capture the loop variable explicitly."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Modifying a shallow copy (Lang: Python, Q9)",
+        "buggyCode": "import copy\ndict1 = {'a': [1,2]}\ndict2 = copy.copy(dict1)\ndict2['a'].append(3)",
+        "correctCode": "import copy\ndict1 = {'a': [1,2]}\ndict2 = copy.deepcopy(dict1)\ndict2['a'].append(3)",
+        "hint": "A shallow copy of a dictionary copies references to its values. If values are mutable objects, changes to those objects will be reflected in both dictionaries."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Dangerous mutable default parameter (Lang: Python, Q10)",
+        "buggyCode": "def create_object(name, attributes={}):\n    attributes['timestamp'] = 'now'\n    return attributes",
+        "correctCode": "def create_object(name, attributes=None):\n    if attributes is None:\n        attributes = {}\n    attributes['timestamp'] = 'now'\n    return attributes",
+        "hint": "The default dictionary is shared across all calls, leading to unexpected modifications."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Late binding in loops with closures (Lang: Python, Q11)",
+        "buggyCode": "def factory():\n    functions = []\n    for j in range(3):\n        functions.append(lambda: j)\n    return functions\nfuncs = factory()\nprint([f() for f in funcs])",
+        "correctCode": "def factory():\n    functions = []\n    for j in range(3):\n        functions.append(lambda val=j: val)\n    return functions\nfuncs = factory()\nprint([f() for f in funcs])",
+        "hint": "The lambda functions close over the variable 'j', not its value at the time of definition."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Modifying a shallow copy (Lang: Python, Q12)",
+        "buggyCode": "import copy\nmatrix = [[1, 2], [3, 4]]\nnew_matrix = copy.copy(matrix)\nnew_matrix[0][0] = 0",
+        "correctCode": "import copy\nmatrix = [[1, 2], [3, 4]]\nnew_matrix = copy.deepcopy(matrix)\nnew_matrix[0][0] = 0",
+        "hint": "When dealing with nested lists, a shallow copy will still point to the same inner list objects."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Dangerous mutable default parameter (Lang: Python, Q13)",
+        "buggyCode": "def add_log_entry(entry, log_entries=[]):\n    log_entries.append(entry)\n    return log_entries",
+        "correctCode": "def add_log_entry(entry, log_entries=None):\n    if log_entries is None:\n        log_entries = []\n    log_entries.append(entry)\n    return log_entries",
+        "hint": "The default list is created once and shared across all calls, leading to cumulative log entries."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Late binding in loops with closures (Lang: Python, Q14)",
+        "buggyCode": "callbacks = []\nfor k in range(5):\n    callbacks.append(lambda: k*k)\nprint([cb() for cb in callbacks])",
+        "correctCode": "callbacks = []\nfor k in range(5):\n    callbacks.append(lambda val=k: val*val)\nprint([cb() for cb in callbacks])",
+        "hint": "The lambda captures the variable 'k' by reference, not by value. When executed, 'k' will have its final value from the loop."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Modifying a shallow copy (Lang: Python, Q15)",
+        "buggyCode": "import copy\nnested_dict = {'data': {'value': 10}}\ncopy_dict = copy.copy(nested_dict)\ncopy_dict['data']['value'] = 20",
+        "correctCode": "import copy\nnested_dict = {'data': {'value': 10}}\ncopy_dict = copy.deepcopy(nested_dict)\ncopy_dict['data']['value'] = 20",
+        "hint": "A shallow copy of a dictionary copies references to nested mutable objects. Changes to these nested objects will affect both the original and the copy."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Dangerous mutable default parameter (Lang: Python, Q16)",
+        "buggyCode": "def configure_app(settings={}):\n    settings['configured'] = True\n    return settings",
+        "correctCode": "def configure_app(settings=None):\n    if settings is None:\n        settings = {}\n    settings['configured'] = True\n    return settings",
+        "hint": "Mutable default arguments are problematic because they are shared across all calls."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Late binding in loops with closures (Lang: Python, Q17)",
+        "buggyCode": "def get_multipliers():\n    multipliers = []\n    for factor in range(1, 4):\n        multipliers.append(lambda x: x * factor)\n    return multipliers\nfuncs = get_multipliers()\nprint([f(5) for f in funcs])",
+        "correctCode": "def get_multipliers():\n    multipliers = []\n    for factor in range(1, 4):\n        multipliers.append(lambda x, f=factor: x * f)\n    return multipliers\nfuncs = get_multipliers()\nprint([f(5) for f in funcs])",
+        "hint": "The 'factor' variable is evaluated when the lambda is called, not when it's defined."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Modifying a shallow copy (Lang: Python, Q18)",
+        "buggyCode": "import copy\nset_of_lists = [{1}, {2}, {3}]\ncopy_set = copy.copy(set_of_lists)\nlist(copy_set)[0].add(4)",
+        "correctCode": "import copy\nset_of_lists = [{1}, {2}, {3}]\ncopy_set = copy.deepcopy(set_of_lists)\nlist(copy_set)[0].add(4)",
+        "hint": "Shallow copy does not create new copies of nested mutable elements. Modifying a nested element in the copy will affect the original."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Dangerous mutable default parameter (Lang: Python, Q19)",
+        "buggyCode": "def add_to_set(element, current_set=set()):\n    current_set.add(element)\n    return current_set",
+        "correctCode": "def add_to_set(element, current_set=None):\n    if current_set is None:\n        current_set = set()\n    current_set.add(element)\n    return current_set",
+        "hint": "The default set is created once and persists across function calls."
+      },
+      {
+        "language": "Python",
+        "bugType": "Logic Error",
+        "description": "Late binding in loops with closures (Lang: Python, Q20)",
+        "buggyCode": "def generate_greeters():\n    greeters = []\n    for name in ['Alice', 'Bob']:\n        greeters.append(lambda: f'Hello, {name}')\n    return greeters\nfuncs = generate_greeters()\nprint([f() for f in funcs])",
+        "correctCode": "def generate_greeters():\n    greeters = []\n    for name in ['Alice', 'Bob']:\n        greeters.append(lambda n=name: f'Hello, {n}')\n    return greeters\nfuncs = generate_greeters()\nprint([f() for f in funcs])",
+        "hint": "The 'name' variable is evaluated at the time the lambda is called, not when it's defined in the loop."
+      }
+    ],
+    "hard": [
+      {
+        "language": "Python",
+        "bugType": "Concurrency Bug",
+        "description": "Race condition in thread unsafe counter (Lang: Python, Q1)",
+        "buggyCode": "import threading\n\ncounter = 0\ndef increment():\n    global counter\n    for _ in range(100000):\n        counter += 1\n\nthreads = [threading.Thread(target=increment) for _ in range(5)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"Final counter: {counter}\")",
+        "correctCode": "import threading\n\ncounter = 0\nlock = threading.Lock()\ndef increment():\n    global counter\n    for _ in range(100000):\n        with lock:\n            counter += 1\n\nthreads = [threading.Thread(target=increment) for _ in range(5)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"Final counter: {counter}\")",
+        "hint": "Shared resources accessed by multiple threads without proper synchronization can lead to race conditions. Use a lock to protect the counter."
+      },
+      {
+        "language": "Python",
+        "bugType": "Memory Leak",
+        "description": "Circular reference preventing garbage collection (Lang: Python, Q2)",
+        "buggyCode": "import gc\n\nclass Node:\n    def __init__(self, value):\n        self.value = value\n        self.next = None\n        self.prev = None\n\n    def __del__(self):\n        print(f\"Deleting Node {self.value}\")\n\nn1 = Node(1)\nn2 = Node(2)\nn1.next = n2\nn2.prev = n1 # Circular reference\n\ndel n1\ndel n2\ngc.collect()\nprint(len(gc.get_objects()))",
+        "correctCode": "import weakref\nimport gc\n\nclass Node:\n    def __init__(self, value):\n        self.value = value\n        self.next = None\n        self.prev = None\n\n    def __del__(self):\n        print(f\"Deleting Node {self.value}\")\n\nn1 = Node(1)\nn2 = Node(2)\nn1.next = n2\nn2.prev = weakref.ref(n1) # Use weak reference for back-pointer\n\ndel n1\ndel n2\ngc.collect()\nprint(len(gc.get_objects()))",
+        "hint": "When objects have circular references and are no longer reachable from the root, they can still prevent garbage collection. Use 'weakref' to break such cycles."
+      },
+      {
+        "language": "Python",
+        "bugType": "Concurrency Bug",
+        "description": "Race condition in thread unsafe counter (Lang: Python, Q3)",
+        "buggyCode": "import threading\n\ncount = {'value': 0}\ndef add_to_count():\n    for _ in range(100000):\n        count['value'] += 1\n\nthreads = [threading.Thread(target=add_to_count) for _ in range(5)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"Final count: {count['value']}\")",
+        "correctCode": "import threading\n\ncount = {'value': 0}\nlock = threading.Lock()\ndef add_to_count():\n    for _ in range(100000):\n        with lock:\n            count['value'] += 1\n\nthreads = [threading.Thread(target=add_to_count) for _ in range(5)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"Final count: {count['value']}\")",
+        "hint": "Dictionary updates are not atomic. Multiple threads modifying the same dictionary entry concurrently require a lock to prevent data corruption."
+      },
+      {
+        "language": "Python",
+        "bugType": "Memory Leak",
+        "description": "Circular reference in linked list (Lang: Python, Q4)",
+        "buggyCode": "import gc\n\nclass LinkedListNode:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\n    def set_next(self, node):\n        self.next = node\n\nnode1 = LinkedListNode(1)\nnode2 = LinkedListNode(2)\nnode1.set_next(node2)\nnode2.set_next(node1) # Creates a circular reference\n\ndel node1\ndel node2\ngc.collect()",
+        "correctCode": "import weakref\nimport gc\n\nclass LinkedListNode:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\n    def set_next(self, node):\n        self.next = node\n\nnode1 = LinkedListNode(1)\nnode2 = LinkedListNode(2)\nnode1.set_next(node2)\n# node2.set_next(weakref.ref(node1)) # No direct circular ref for simple lists\n\ndel node1\ndel node2\ngc.collect()",
+        "hint": "Circular references, especially in data structures like linked lists, can prevent objects from being garbage collected. Consider using weak references for back-pointers."
+      },
+      {
+        "language": "Python",
+        "bugType": "Concurrency Bug",
+        "description": "Race condition in thread unsafe counter (Lang: Python, Q5)",
+        "buggyCode": "import threading\n\nshared_data = [0]\ndef modify_data():\n    for _ in range(100000):\n        shared_data[0] += 1\n\nthreads = [threading.Thread(target=modify_data) for _ in range(5)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"Final data: {shared_data[0]}\")",
+        "correctCode": "import threading\n\nshared_data = [0]\nlock = threading.Lock()\ndef modify_data():\n    for _ in range(100000):\n        with lock:\n            shared_data[0] += 1\n\nthreads = [threading.Thread(target=modify_data) for _ in range(5)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"Final data: {shared_data[0]}\")",
+        "hint": "Modifying shared mutable lists or their elements concurrently without synchronization leads to race conditions. Use a threading.Lock to protect critical sections."
+      },
+      {
+        "language": "Python",
+        "bugType": "Memory Leak",
+        "description": "Circular reference preventing garbage collection (Lang: Python, Q6)",
+        "buggyCode": "import gc\n\nclass A:\n    def __init__(self):\n        self.b = None\nclass B:\n    def __init__(self):\n        self.a = None\n\na = A()\nb = B()\na.b = b\nb.a = a # Circular reference\n\ndel a\ndel b\ngc.collect()",
+        "correctCode": "import weakref\nimport gc\n\nclass A:\n    def __init__(self):\n        self.b = None\nclass B:\n    def __init__(self):\n        self.a = None\n\na = A()\nb = B()\na.b = b\nb.a = weakref.ref(a) # Break circular reference\n\ndel a\ndel b\ngc.collect()",
+        "hint": "When two objects hold strong references to each other, even if they are no longer accessible from the root, they won't be garbage collected. Use 'weakref' for one of the references."
+      },
+      {
+        "language": "Python",
+        "bugType": "Concurrency Bug",
+        "description": "Race condition in thread unsafe counter (Lang: Python, Q7)",
+        "buggyCode": "import threading\n\nvalue = 0\ndef increment_value():\n    global value\n    for _ in range(100000):\n        temp = value\n        value = temp + 1\n\nthreads = [threading.Thread(target=increment_value) for _ in range(5)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"Final value: {value}\")",
+        "correctCode": "import threading\n\nvalue = 0\nlock = threading.Lock()\n\ndef increment_value():\n    global value\n    for _ in range(100000):\n        with lock:\n            temp = value\n            value = temp + 1\n\nthreads = [threading.Thread(target=increment_value) for _ in range(5)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"Final value: {value}\")",
+        "hint": "The read, modify, and write operations on 'value' are not atomic. A lock is needed to ensure thread-safe increments."
+      },
+      {
+        "language": "Python",
+        "bugType": "Memory Leak",
+        "description": "Circular reference preventing garbage collection (Lang: Python, Q8)",
+        "buggyCode": "import gc\n\nclass Parent:\n    def __init__(self, child):\n        self.child = child\nclass Child:\n    def __init__(self, parent):\n        self.parent = parent\n\np = Parent(None)\nc = Child(p)\np.child = c\n\ndel p\ndel c\ngc.collect()",
+        "correctCode": "import weakref\nimport gc\n\nclass Parent:\n    def __init__(self, child):\n        self.child = child\nclass Child:\n    def __init__(self, parent_ref):\n        self.parent = parent_ref\n\np = Parent(None)\nc = Child(weakref.ref(p))\np.child = c\n\ndel p\ndel c\ngc.collect()",
+        "hint": "A direct circular reference between parent and child objects will prevent them from being garbage collected. Use a weak reference for the back-pointer from child to parent."
+      },
+      {
+        "language": "Python",
+        "bugType": "Concurrency Bug",
+        "description": "Race condition in thread unsafe counter (Lang: Python, Q9)",
+        "buggyCode": "import threading\n\ndata_list = []\ndef append_data():\n    for i in range(10000):\n        data_list.append(i)\n\nthreads = [threading.Thread(target=append_data) for _ in range(10)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"List length: {len(data_list)}\")",
+        "correctCode": "import threading\n\ndata_list = []\nlock = threading.Lock()\ndef append_data():\n    for i in range(10000):\n        with lock:\n            data_list.append(i)\n\nthreads = [threading.Thread(target=append_data) for _ in range(10)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"List length: {len(data_list)}\")",
+        "hint": "Appending to a shared list from multiple threads without synchronization can lead to inconsistent results and data loss."
+      },
+      {
+        "language": "Python",
+        "bugType": "Memory Leak",
+        "description": "Circular reference preventing garbage collection (Lang: Python, Q10)",
+        "buggyCode": "import gc\n\nclass ClassA:\n    def __init__(self):\n        self.connected_obj = None\nclass ClassB:\n    def __init__(self):\n        self.connected_obj = None\n\no1 = ClassA()\no2 = ClassB()\no1.connected_obj = o2\no2.connected_obj = o1 # Circular reference\n\ndel o1\ndel o2\ngc.collect()",
+        "correctCode": "import weakref\nimport gc\n\nclass ClassA:\n    def __init__(self):\n        self.connected_obj = None\nclass ClassB:\n    def __init__(self):\n        self.connected_obj = None\n\no1 = ClassA()\no2 = ClassB()\no1.connected_obj = o2\no2.connected_obj = weakref.ref(o1)\n\ndel o1\ndel o2\ngc.collect()",
+        "hint": "Objects with mutual strong references will not be garbage collected even if unreachable. A weak reference breaks the cycle."
+      },
+      {
+        "language": "Python",
+        "bugType": "Concurrency Bug",
+        "description": "Race condition in thread unsafe counter (Lang: Python, Q11)",
+        "buggyCode": "import threading\n\ncounter = 0\ndef increment():\n    global counter\n    for _ in range(100000):\n        counter += 1\n\nthreads = [threading.Thread(target=increment) for _ in range(5)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"Final counter: {counter}\")",
+        "correctCode": "import threading\n\ncounter = 0\nlock = threading.Lock()\ndef increment():\n    global counter\n    for _ in range(100000):\n        with lock:\n            counter += 1\n\nthreads = [threading.Thread(target=increment) for _ in range(5)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"Final counter: {counter}\")",
+        "hint": "Shared integer increment operations are not atomic. A mutex (lock) is required to ensure atomicity and prevent race conditions."
+      },
+      {
+        "language": "Python",
+        "bugType": "Memory Leak",
+        "description": "Circular reference preventing garbage collection (Lang: Python, Q12)",
+        "buggyCode": "import gc\n\nclass Node:\n    def __init__(self, value):\n        self.value = value\n        self.next = None\n        self.prev = None\n\n    def __del__(self):\n        print(f\"Deleting Node {self.value}\")\n\nn1 = Node(1)\nn2 = Node(2)\nn1.next = n2\nn2.prev = n1 # Circular reference\n\ndel n1\ndel n2\ngc.collect()\nprint(len(gc.get_objects()))",
+        "correctCode": "import weakref\nimport gc\n\nclass Node:\n    def __init__(self, value):\n        self.value = value\n        self.next = None\n        self.prev = None\n\n    def __del__(self):\n        print(f\"Deleting Node {self.value}\")\n\nn1 = Node(1)\nn2 = Node(2)\nn1.next = n2\nn2.prev = weakref.ref(n1) # Use weak reference for back-pointer\n\ndel n1\ndel n2\ngc.collect()\nprint(len(gc.get_objects()))",
+        "hint": "Circular references can prevent objects from being garbage collected. Weak references are useful to break these cycles without affecting the primary reference."
+      },
+      {
+        "language": "Python",
+        "bugType": "Concurrency Bug",
+        "description": "Race condition in thread unsafe counter (Lang: Python, Q13)",
+        "buggyCode": "import threading\n\ncount = {'value': 0}\ndef add_to_count():\n    for _ in range(100000):\n        count['value'] += 1\n\nthreads = [threading.Thread(target=add_to_count) for _ in range(5)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"Final count: {count['value']}\")",
+        "correctCode": "import threading\n\ncount = {'value': 0}\nlock = threading.Lock()\ndef add_to_count():\n    for _ in range(100000):\n        with lock:\n            count['value'] += 1\n\nthreads = [threading.Thread(target=add_to_count) for _ in range(5)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"Final count: {count['value']}\")",
+        "hint": "Operations on shared mutable data structures like dictionaries require explicit locking to ensure thread safety."
+      },
+      {
+        "language": "Python",
+        "bugType": "Memory Leak",
+        "description": "Circular reference in linked list (Lang: Python, Q14)",
+        "buggyCode": "import gc\n\nclass LinkedListNode:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\n    def set_next(self, node):\n        self.next = node\n\nnode1 = LinkedListNode(1)\nnode2 = LinkedListNode(2)\nnode1.set_next(node2)\nnode2.set_next(node1) # Creates a circular reference\n\ndel node1\ndel node2\ngc.collect()",
+        "correctCode": "import weakref\nimport gc\n\nclass LinkedListNode:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\n    def set_next(self, node):\n        self.next = node\n\nnode1 = LinkedListNode(1)\nnode2 = LinkedListNode(2)\nnode1.set_next(node2)\n# node2.set_next(weakref.ref(node1)) # No direct circular ref for simple lists\n\ndel node1\ndel node2\ngc.collect()",
+        "hint": "Circular references in doubly linked lists can prevent nodes from being garbage collected if not handled carefully. Weak references can resolve this."
+      },
+      {
+        "language": "Python",
+        "bugType": "Concurrency Bug",
+        "description": "Race condition in thread unsafe counter (Lang: Python, Q15)",
+        "buggyCode": "import threading\n\nshared_data = [0]\ndef modify_data():\n    for _ in range(100000):\n        shared_data[0] += 1\n\nthreads = [threading.Thread(target=modify_data) for _ in range(5)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"Final data: {shared_data[0]}\")",
+        "correctCode": "import threading\n\nshared_data = [0]\nlock = threading.Lock()\ndef modify_data():\n    for _ in range(100000):\n        with lock:\n            shared_data[0] += 1\n\nthreads = [threading.Thread(target=modify_data) for _ in range(5)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"Final data: {shared_data[0]}\")",
+        "hint": "List element modification is not inherently atomic. Access to shared mutable list elements should be protected by a lock."
+      },
+      {
+        "language": "Python",
+        "bugType": "Memory Leak",
+        "description": "Circular reference preventing garbage collection (Lang: Python, Q16)",
+        "buggyCode": "import gc\n\nclass A:\n    def __init__(self):\n        self.b = None\nclass B:\n    def __init__(self):\n        self.a = None\n\na = A()\nb = B()\na.b = b\nb.a = a # Circular reference\n\ndel a\ndel b\ngc.collect()",
+        "correctCode": "import weakref\nimport gc\n\nclass A:\n    def __init__(self):\n        self.b = None\nclass B:\n    def __init__(self):\n        self.a = None\n\na = A()\nb = B()\na.b = b\nb.a = weakref.ref(a) # Break circular reference\n\ndel a\ndel b\ngc.collect()",
+        "hint": "Even if objects are no longer referenced by the program, if they form a cycle of strong references, they will not be garbage collected by default. Weak references can resolve this."
+      },
+      {
+        "language": "Python",
+        "bugType": "Concurrency Bug",
+        "description": "Race condition in thread unsafe counter (Lang: Python, Q17)",
+        "buggyCode": "import threading\n\nvalue = 0\ndef increment_value():\n    global value\n    for _ in range(100000):\n        temp = value\n        value = temp + 1\n\nthreads = [threading.Thread(target=increment_value) for _ in range(5)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"Final value: {value}\")",
+        "correctCode": "import threading\n\nvalue = 0\nlock = threading.Lock()\n\ndef increment_value():\n    global value\n    for _ in range(100000):\n        with lock:\n            temp = value\n            value = temp + 1\n\nthreads = [threading.Thread(target=increment_value) for _ in range(5)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"Final value: {value}\")",
+        "hint": "Operations on global mutable variables from multiple threads without synchronization are not thread-safe. A lock is necessary to protect the read-modify-write cycle."
+      },
+      {
+        "language": "Python",
+        "bugType": "Memory Leak",
+        "description": "Circular reference preventing garbage collection (Lang: Python, Q18)",
+        "buggyCode": "import gc\n\nclass Parent:\n    def __init__(self, child):\n        self.child = child\nclass Child:\n    def __init__(self, parent):\n        self.parent = parent\n\np = Parent(None)\nc = Child(p)\np.child = c\n\ndel p\ndel c\ngc.collect()",
+        "correctCode": "import weakref\nimport gc\n\nclass Parent:\n    def __init__(self, child):\n        self.child = child\nclass Child:\n    def __init__(self, parent_ref):\n        self.parent = parent_ref\n\np = Parent(None)\nc = Child(weakref.ref(p))\np.child = c\n\ndel p\ndel c\ngc.collect()",
+        "hint": "A strong reference cycle between parent and child can prevent both from being garbage collected. Using weak references for back-pointers helps resolve this."
+      },
+      {
+        "language": "Python",
+        "bugType": "Concurrency Bug",
+        "description": "Race condition in thread unsafe counter (Lang: Python, Q19)",
+        "buggyCode": "import threading\n\ndata_list = []\ndef append_data():\n    for i in range(10000):\n        data_list.append(i)\n\nthreads = [threading.Thread(target=append_data) for _ in range(10)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"List length: {len(data_list)}\")",
+        "correctCode": "import threading\n\ndata_list = []\nlock = threading.Lock()\ndef append_data():\n    for i in range(10000):\n        with lock:\n            data_list.append(i)\n\nthreads = [threading.Thread(target=append_data) for _ in range(10)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"List length: {len(data_list)}\")",
+        "hint": "Concurrent appends to a shared Python list without explicit locking can lead to race conditions and incorrect results due to the Global Interpreter Lock (GIL) not protecting complex operations."
+      },
+      {
+        "language": "Python",
+        "bugType": "Memory Leak",
+        "description": "Circular reference preventing garbage collection (Lang: Python, Q20)",
+        "buggyCode": "import gc\n\nclass ClassA:\n    def __init__(self):\n        self.connected_obj = None\nclass ClassB:\n    def __init__(self):\n        self.connected_obj = None\n\no1 = ClassA()\no2 = ClassB()\no1.connected_obj = o2\no2.connected_obj = o1 # Circular reference\n\ndel o1\ndel o2\ngc.collect()",
+        "correctCode": "import weakref\nimport gc\n\nclass ClassA:\n    def __init__(self):\n        self.connected_obj = None\nclass ClassB:\n    def __init__(self):\n        self.connected_obj = None\n\no1 = ClassA()\no2 = ClassB()\no1.connected_obj = o2\no2.connected_obj = weakref.ref(o1)\n\ndel o1\ndel o2\ngc.collect()",
+        "hint": "Circular references between objects can prevent them from being garbage collected, even if they are no longer actively used by the program. Use weak references to allow proper cleanup."
+      }
+    ]
+  },
+  "JavaScript": {
+    "easy": [
+      {
+        "language": "JavaScript",
+        "bugType": "Syntax Error",
+        "description": "Missing semicolon at end of statement (Lang: JavaScript, Q1)",
+        "buggyCode": "console.log(\"Hello World\")",
+        "correctCode": "console.log(\"Hello World\");",
+        "hint": "JavaScript statements should typically end with a semicolon, although it's sometimes optional due to automatic semicolon insertion (ASI)."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Logic Error",
+        "description": "Incorrect comparison operator (Lang: JavaScript, Q2)",
+        "buggyCode": "if (age = 18) {\n    console.log(\"Eligible\");\n}",
+        "correctCode": "if (age === 18) {\n    console.log(\"Eligible\");\n}",
+        "hint": "The single equals sign (=) is for assignment, not comparison. Use '==' for loose equality or '===' for strict equality."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Logic Error",
+        "description": "Using `var` instead of `let`/`const` (Lang: JavaScript, Q3)",
+        "buggyCode": "for (var i = 0; i < 5; i++) {\n    setTimeout(function() {\n        console.log(i);\n    }, 100);\n}",
+        "correctCode": "for (let i = 0; i < 5; i++) {\n    setTimeout(function() {\n        console.log(i);\n    }, 100);\n}",
+        "hint": "`var` has function scope, leading to unexpected behavior in loops with closures. `let` has block scope."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Type Coercion",
+        "description": "Type coercion leading to unexpected results (Lang: JavaScript, Q4)",
+        "buggyCode": "let num = 5;\nlet str = \"10\";\nlet result = num + str;\nconsole.log(result);",
+        "correctCode": "let num = 5;\nlet str = \"10\";\nlet result = num + parseInt(str);\nconsole.log(result);",
+        "hint": "The '+' operator performs string concatenation if one of the operands is a string. Explicitly convert to number type if addition is intended."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Scope Error",
+        "description": "Incorrect scope for variable (Lang: JavaScript, Q5)",
+        "buggyCode": "function greet() {\n    var message = \"Hello\";\n}\nconsole.log(message);",
+        "correctCode": "function greet() {\n    let message = \"Hello\";\n    console.log(message);\n}\ngreet();",
+        "hint": "Variables declared with `var` are function-scoped. Variables declared with `let` or `const` are block-scoped."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Syntax Error",
+        "description": "Missing semicolon (Lang: JavaScript, Q6)",
+        "buggyCode": "let x = 10\nlet y = 20\nconsole.log(x + y)",
+        "correctCode": "let x = 10;\nlet y = 20;\nconsole.log(x + y);",
+        "hint": "Semicolons are generally used to terminate statements in JavaScript."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Logic Error",
+        "description": "Using `==` instead of `===` (Lang: JavaScript, Q7)",
+        "buggyCode": "let num = 5;\nlet str = \"5\";\nif (num == str) {\n    console.log(\"Equal\");\n} else {\n    console.log(\"Not Equal\");\n}",
+        "correctCode": "let num = 5;\nlet str = \"5\";\nif (num === str) {\n    console.log(\"Equal\");\n} else {\n    console.log(\"Not Equal\");\n}",
+        "hint": "The '==' operator performs type coercion, while '===' checks for strict equality (value and type)."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Syntax Error",
+        "description": "Redeclaring `var` variable (Lang: JavaScript, Q8)",
+        "buggyCode": "var a = 1;\nvar a = 2;\nconsole.log(a);",
+        "correctCode": "let a = 1;\nlet a = 2; // This would be a syntax error in actual JS with `let`\nconsole.log(a);",
+        "hint": "`var` allows redeclaration, which can lead to confusion. `let` and `const` prevent redeclaration in the same scope."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Type Coercion",
+        "description": "Implicit type conversion (Lang: JavaScript, Q9)",
+        "buggyCode": "let val1 = \"10\";\nlet val2 = 5;\nlet sum = val1 + val2;\nconsole.log(sum);",
+        "correctCode": "let val1 = \"10\";\nlet val2 = 5;\nlet sum = parseInt(val1) + val2;\nconsole.log(sum);",
+        "hint": "The '+' operator converts numbers to strings if one operand is a string during addition. Use `parseInt()` or `Number()` for explicit conversion."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Reference Error",
+        "description": "Variable not defined (Lang: JavaScript, Q10)",
+        "buggyCode": "function calculate() {\n    let result = 100;\n}\nconsole.log(result);",
+        "correctCode": "function calculate() {\n    let result = 100;\n    console.log(result);\n}\ncalculate();",
+        "hint": "Variables declared with `let` or `const` are block-scoped and not accessible outside their block."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Logic Error",
+        "description": "Missing return statement in function (Lang: JavaScript, Q11)",
+        "buggyCode": "function add(a, b) {\n    let sum = a + b;\n}\nlet sum = add(2, 3);\nconsole.log(sum);",
+        "correctCode": "function add(a, b) {\n    return a + b;\n}\nlet sum = add(2, 3);\nconsole.log(sum);",
+        "hint": "Functions implicitly return `undefined` if no return statement is specified."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Logic Error",
+        "description": "Incorrect loop condition (Lang: JavaScript, Q12)",
+        "buggyCode": "for (let i = 0; i <= 3; i++) {\n    console.log(i);\n}",
+        "correctCode": "for (let i = 0; i < 3; i++) {\n    console.log(i);\n}",
+        "hint": "The loop runs one too many times. Adjust the condition to match the desired number of iterations."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Logic Error",
+        "description": "Using `==` instead of `===` for strict equality (Lang: JavaScript, Q13)",
+        "buggyCode": "let val = 0;\nif (val == false) {\n    console.log(\"False\");\n} else {\n    console.log(\"True\");\n}",
+        "correctCode": "let val = 0;\nif (val === false) { // Using === for strict comparison\n    console.log(\"False\");\n} else {\n    console.log(\"True\");\n}",
+        "hint": "The '==' operator performs type coercion, which can lead to `0 == false` being true. Use '===' for strict comparison to avoid this."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Reference Error",
+        "description": "Function not defined (Lang: JavaScript, Q14)",
+        "buggyCode": "function execute() {\n    console.log(\"Executed\");\n}\n// execute(); // Forgot to call the function\n",
+        "correctCode": "function execute() {\n    console.log(\"Executed\");\n}\nexecute();",
+        "hint": "A function must be explicitly called to execute its code."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Scope Error",
+        "description": "Global variable unintentional modification (Lang: JavaScript, Q15)",
+        "buggyCode": "let count = 0;\nfunction increment() {\n    count++; // Accidentally modifies global count\n    console.log(count);\n}\nincrement();\nconsole.log(count);",
+        "correctCode": "let count = 0;\nfunction increment() {\n    let count = 0; // Local variable\n    count++;\n    console.log(count);\n}\nincrement();\nconsole.log(count); // Global count remains 0",
+        "hint": "Without `let` or `const`, assigning to a variable inside a function might implicitly create a global variable or modify an outer-scoped variable. Explicitly declare variables with `let` or `const`."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Syntax Error",
+        "description": "Missing comma in object literal (Lang: JavaScript, Q16)",
+        "buggyCode": "let person = {\n    name: \"Alice\"\n    age: 30\n};\nconsole.log(person);",
+        "correctCode": "let person = {\n    name: \"Alice\",\n    age: 30\n};\nconsole.log(person);",
+        "hint": "Properties in object literals are separated by commas."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Logic Error",
+        "description": "Incorrect array indexing (Lang: JavaScript, Q17)",
+        "buggyCode": "let fruits = [\"apple\", \"banana\", \"cherry\"];\nconsole.log(fruits[3]);",
+        "correctCode": "let fruits = [\"apple\", \"banana\", \"cherry\"];\nconsole.log(fruits[1]);",
+        "hint": "Array indices are zero-based. The valid indices for an array of length N are 0 to N-1."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Type Coercion",
+        "description": "Using `+` for string concatenation with numbers (Lang: JavaScript, Q18)",
+        "buggyCode": "let num1 = 10;\nlet num2 = 20;\nlet message = \"Total: \" + num1 + num2;\nconsole.log(message);",
+        "correctCode": "let num1 = 10;\nlet num2 = 20;\nlet message = \"Total: \" + (num1 + num2);\nconsole.log(message);",
+        "hint": "When using the '+' operator, if any operand is a string, JavaScript performs string concatenation. Use parentheses to ensure arithmetic operations are performed first."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Logic Error",
+        "description": "Incorrect function invocation (Lang: JavaScript, Q19)",
+        "buggyCode": "function sayHello() {\n    return \"Hello!\";\n}\nconsole.log(sayHello);",
+        "correctCode": "function sayHello() {\n    return \"Hello!\";\n}\nconsole.log(sayHello());",
+        "hint": "To execute a function and get its return value, you must call it with parentheses `()`."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Reference Error",
+        "description": "Undeclared variable use (Lang: JavaScript, Q20)",
+        "buggyCode": "function displayValue() {\n    value = 50; // Accidentally creates global variable in non-strict mode\n    console.log(value);\n}\ndisplayValue();",
+        "correctCode": "function displayValue() {\n    let value = 50;\n    console.log(value);\n}\ndisplayValue();",
+        "hint": "Always declare variables using `var`, `let`, or `const` to avoid unintended global variables and make your code more predictable, especially in strict mode."
+      }
+    ],
+    "medium": [
+      {
+        "language": "JavaScript",
+        "bugType": "Asynchronous Logic Error",
+        "description": "Incorrect asynchronous loop iteration (Lang: JavaScript, Q1)",
+        "buggyCode": "for (var i = 0; i < 3; i++) {\n    setTimeout(() => console.log(i), 100);\n}",
+        "correctCode": "for (let i = 0; i < 3; i++) {\n    setTimeout(() => console.log(i), 100);\n}",
+        "hint": "Due to `var`'s function scope, the `setTimeout` callback captures the final value of `i` after the loop completes. Use `let` for block scoping."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Closure Bug",
+        "description": "Scope issue with `var` in a loop (Lang: JavaScript, Q2)",
+        "buggyCode": "const functions = [];\nfor (var i = 0; i < 3; i++) {\n  functions.push(() => console.log(i));\n}\nfunctions.forEach(f => f());",
+        "correctCode": "const functions = [];\nfor (let i = 0; i < 3; i++) {\n  functions.push(() => console.log(i));\n}\nfunctions.forEach(f => f());",
+        "hint": "The `var` declaration means `i` is hoisted and shared across all loop iterations. `let` creates a new `i` for each iteration."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Event Handling Bug",
+        "description": "Event bubbling/propagation issues (Lang: JavaScript, Q3)",
+        "buggyCode": "<div id=\"parent\"><button id=\"child\">Click Me</button></div>\n<script>\ndocument.getElementById('parent').addEventListener('click', () => console.log('Parent clicked'));\ndocument.getElementById('child').addEventListener('click', () => console.log('Child clicked'));\n</script>",
+        "correctCode": "// Using event.stopPropagation()\n// Or attach listener directly to inner element if only inner is desired.",
+        "hint": "Events 'bubble up' the DOM tree. If a click on a child element should only trigger the child's handler, you need to stop propagation."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Context (this) Bug",
+        "description": "Incorrect handling of `this` in event listeners (Lang: JavaScript, Q4)",
+        "buggyCode": "const button = document.getElementById('myButton');\nbutton.addEventListener('click', function() {\n    console.log(this); // 'this' might not be the button here depending on context\n});",
+        "correctCode": "document.getElementById('myButton').addEventListener('click', function() {\n    console.log(this.textContent); // `this` refers to the button\n});",
+        "hint": "The value of `this` inside an event listener depends on how the function is called. In a regular function expression as an event listener, `this` refers to the element that triggered the event. Arrow functions, however, capture `this` from their lexical scope."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Asynchronous Logic Error",
+        "description": "Promises not chained correctly (Lang: JavaScript, Q5)",
+        "buggyCode": "function fetchData() {\n    return new Promise(resolve => setTimeout(() => resolve(\"Data\"), 100));\n}\n\nfetchData()\n    .then(data => console.log(data));\nfetchData()\n    .then(data => console.log(\"Processed \" + data));",
+        "correctCode": "function fetchData() {\n    return new Promise(resolve => setTimeout(() => resolve(\"Data\"), 100));\n}\n\nfetchData()\n    .then(data => {\n        console.log(data);\n        return \"Processed \" + data;\n    })\n    .then(processedData => console.log(processedData));",
+        "hint": "To ensure sequential execution of asynchronous operations, chain promises using `.then()`. Each `.then()` should return a promise or a value that becomes the fulfillment value for the next `.then()`."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Closure Bug",
+        "description": "Closures capturing wrong variable (Lang: JavaScript, Q6)",
+        "buggyCode": "const arr = [];\nfor (var i = 0; i < 3; i++) {\n    arr.push(function() {\n        console.log(i);\n    });\n}\narr.forEach(f => f());",
+        "correctCode": "const arr = [];\nfor (let i = 0; i < 3; i++) {\n    arr.push(function() {\n        console.log(i);\n    });\n}\narr.forEach(f => f());",
+        "hint": "When using `var` in a loop, the variable `i` is hoisted to the function scope. By the time the `setTimeout` callbacks run, the loop has completed and `i` is its final value. Use `let` for block-scoped variables."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Asynchronous Logic Error",
+        "description": "Incorrect `async/await` usage (Lang: JavaScript, Q7)",
+        "buggyCode": "async function process() {\n    console.log(\"Start\");\n    new Promise(resolve => setTimeout(resolve, 100)); // Missing await\n    console.log(\"End\");\n}\nprocess();",
+        "correctCode": "async function process() {\n    console.log(\"Start\");\n    await new Promise(resolve => setTimeout(resolve, 100));\n    console.log(\"End\");\n}\nprocess();",
+        "hint": "The `await` keyword is necessary to pause the execution of an `async` function until a Promise is settled. Without `await`, the Promise will run in the background without pausing the function."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Logic Error",
+        "description": "Modifying array during iteration (Lang: JavaScript, Q8)",
+        "buggyCode": "const list = [1, 2, 3, 4];\nfor (let i = 0; i < list.length; i++) {\n    if (list[i] % 2 === 0) {\n        list.splice(i, 1);\n    }\n}\nconsole.log(list);",
+        "correctCode": "const list = [1, 2, 3, 4];\nfor (let i = list.length - 1; i >= 0; i--) {\n    if (list[i] % 2 === 0) {\n        list.splice(i, 1);\n    }\n}\nconsole.log(list);",
+        "hint": "Modifying an array's length while iterating forwards can skip elements or cause index issues. Iterate backwards or use methods that create a new array (e.g., `filter`)."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Context (this) Bug",
+        "description": "`this` context loss in callback (Lang: JavaScript, Q9)",
+        "buggyCode": "class MyClass {\n    constructor() {\n        this.value = 42;\n    }\n    logValue() {\n        console.log(this.value);\n    }\n    setup() {\n        document.getElementById('btn').addEventListener('click', this.logValue); // 'this' will be the button element\n    }\n}\nnew MyClass().setup();",
+        "correctCode": "class MyClass {\n    constructor() {\n        this.value = 42;\n    }\n    logValue() {\n        console.log(this.value);\n    }\n    setup() {\n        document.getElementById('btn').addEventListener('click', this.logValue.bind(this));\n    }\n}\nnew MyClass().setup();",
+        "hint": "When a method is passed as a callback, its `this` context is often lost. Use `.bind(this)` to explicitly set the context, or use an arrow function if available for lexical `this`."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Promise Handling Bug",
+        "description": "Incorrect error handling with Promises (Lang: JavaScript, Q10)",
+        "buggyCode": "function riskyOperation() {\n    return new Promise((resolve, reject) => {\n        // Simulate an error\n        reject(\"Something went wrong!\");\n    });\n}\n\nriskyOperation()\n    .then(data => console.log(data));\n// Missing .catch()",
+        "correctCode": "function riskyOperation() {\n    return new Promise((resolve, reject) => {\n        // Simulate an error\n        reject(\"Something went wrong!\");\n    });\n}\n\nriskyOperation()\n    .then(data => console.log(data))\n    .catch(error => console.error(\"Caught error:\", error));",
+        "hint": "Promises should always have a `.catch()` block to handle rejections and prevent unhandled promise rejections."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Asynchronous Logic Error",
+        "description": "Incorrect order of async operations in event loop (Lang: JavaScript, Q11)",
+        "buggyCode": "console.log('First');\nsetTimeout(() => console.log('Second'), 0);\nPromise.resolve().then(() => console.log('Third'));\nconsole.log('Fourth');",
+        "correctCode": "console.log('First');\nconsole.log('Fourth');\nPromise.resolve().then(() => console.log('Third'));\nsetTimeout(() => console.log('Second'), 0);",
+        "hint": "Microtasks (like Promise callbacks) run before macrotasks (like `setTimeout` callbacks) in the event loop, even if `setTimeout` is set to 0ms."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Memory Leak",
+        "description": "Retained closure in long-lived event handler (Lang: JavaScript, Q12)",
+        "buggyCode": "function setupExpensiveTask() {\n    const heavyData = Array(1000000).fill('some_data');\n    const execBtn = document.getElementById('execBtn');\n    execBtn.addEventListener('click', () => {\n        console.log('Executing task with heavy data');\n        // heavyData is retained in the closure\n    });\n}\nsetupExpensiveTask();",
+        "correctCode": "function setupExpensiveTask() {\n    // If heavyData is not directly used in the handler or only needed temporarily\n    // Consider passing only necessary parts or creating it on demand.\n    const execBtn = document.getElementById('execBtn');\n    const handler = () => {\n        console.log('Executing task');\n        // heavyData = null; if it was local to handler and temporary\n    };\n    execBtn.addEventListener('click', handler);\n    // To prevent leak if element is removed from DOM:\n    // execBtn.removeEventListener('click', handler);\n}",
+        "hint": "A closure retains a reference to its outer scope's variables. If a long-lived event handler closes over large objects, those objects might not be garbage collected."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Asynchronous Logic Error",
+        "description": "Incorrect order of async operations (Lang: JavaScript, Q13)",
+        "buggyCode": "async function main() {\n    console.log(1);\n    setTimeout(() => console.log(2), 0);\n    console.log(3);\n    await Promise.resolve();\n    console.log(4);\n}\nmain();",
+        "correctCode": "async function main() {\n    console.log(1);\n    await Promise.resolve();\n    console.log(2);\n}\nconsole.log(3);\nPromise.resolve().then(() => console.log(4));\nmain();",
+        "hint": "`await` pauses the `async` function but allows the rest of the synchronous code and microtasks to execute before resuming. `setTimeout` is a macrotask."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Memory Leak",
+        "description": "Detached DOM nodes (Lang: JavaScript, Q14)",
+        "buggyCode": "<div id=\"container\"></div>\n<script>\nlet container = document.getElementById('container');\nfor(let i=0; i<1000; i++) {\n    let div = document.createElement('div');\n    div.id = 'div-' + i;\n    container.appendChild(div);\n}\n// The 'container' is removed but 'div' elements might still be referenced indirectly.\ncontainer.remove();\n</script>",
+        "correctCode": "let container = document.getElementById('container');\nfor(let i=0; i<1000; i++) {\n    let div = document.createElement('div');\n    div.id = 'div-' + i;\n    container.appendChild(div);\n}\n// Clear references explicitly if needed, or manage component lifecycle\ncontainer.innerHTML = '';\n// If individual 'div' references were stored in an array, clear that too.",
+        "hint": "When DOM elements are removed from the document but still referenced by JavaScript variables or closures, they can become 'detached' and not be garbage collected, leading to memory leaks."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Asynchronous Logic Error",
+        "description": "Mixing synchronous and asynchronous array iteration (Lang: JavaScript, Q15)",
+        "buggyCode": "function processNumbers() {\n    const numbers = [1, 2, 3];\n    numbers.forEach(async (num) => {\n        await new Promise(res => setTimeout(res, 50));\n        console.log(num * 2);\n    });\n    console.log(\"Done processing\"); // This logs before all numbers are processed\n}\nprocessNumbers();",
+        "correctCode": "async function processNumbers() {\n    const numbers = [1, 2, 3];\n    const promises = numbers.map(async (num) => {\n        await new Promise(res => setTimeout(res, 50));\n        return num * 2;\n    });\n    const results = await Promise.all(promises);\n    console.log(results);\n}\nprocessNumbers();",
+        "hint": "When using `async` callbacks with methods like `forEach`, the outer function doesn't wait for the asynchronous operations to complete. Use `Promise.all` with `map` to wait for all promises."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Memory Leak",
+        "description": "Circular references in JavaScript objects (Lang: JavaScript, Q16)",
+        "buggyCode": "function createObjectPair() {\n    const objA = {};\n    const objB = {};\n    objA.buddy = objB;\n    objB.partner = objA; // Creates a circular reference\n    return objA;\n}\n\nlet pair = createObjectPair();\npair = null; // objA and objB might not be garbage collected",
+        "correctCode": "function createObjectPair() {\n    const objA = {};\n    const objB = {};\n    objA.buddy = objB;\n    // objB.partner = objA; // Remove the direct circular reference\n    return objA;\n}\n\nlet pair = createObjectPair();\npair = null;",
+        "hint": "In older JavaScript engines, circular references between objects could lead to memory leaks. Modern garbage collectors typically handle this, but it's still good practice to break explicit cycles if they are not truly needed."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Asynchronous Logic Error",
+        "description": "Incorrect order of async operations (Lang: JavaScript, Q17)",
+        "buggyCode": "console.log('A');\nsetTimeout(() => console.log('B'), 0);\nPromise.resolve().then(() => console.log('C'));",
+        "correctCode": "console.log('C');\nPromise.resolve().then(() => console.log('B'));\nsetTimeout(() => console.log('A'), 10);",
+        "hint": "Understand the JavaScript event loop order: Synchronous code -> Microtask queue (Promises, MutationObserver) -> Macrotask queue (setTimeout, setInterval)."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Memory Leak",
+        "description": "Retained closure in long-lived event handler (Lang: JavaScript, Q18)",
+        "buggyCode": "let cache = {};\nconst dataButton = document.getElementById('dataButton');\ndataButton.addEventListener('click', function() {\n    // This closure will keep 'cache' in memory as long as the handler is active\n    if (!cache.data) {\n        cache.data = Array(100000).fill(Math.random());\n    }\n    console.log('Data loaded');\n});",
+        "correctCode": "let cache = {};\nconst dataButton = document.getElementById('dataButton');\nconst handler = function() {\n    if (!cache.data) {\n        cache.data = Array(100000).fill(Math.random());\n    }\n    console.log('Data loaded');\n};\ndataButton.addEventListener('click', handler);\n// When dataButton is no longer needed:\n// dataButton.removeEventListener('click', handler);\n// cache = {}; // If the cache itself should be cleared",
+        "hint": "If an event listener (which forms a closure) lives longer than the objects it references from its outer scope, those objects will not be garbage collected."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Asynchronous Logic Error",
+        "description": "Incorrect order of async operations in event loop (Lang: JavaScript, Q19)",
+        "buggyCode": "async function fetchData() {\n    console.log('Inside async');\n    await Promise.resolve();\n    console.log('After await');\n}\n\nconsole.log('Before async');\nfetchData();\nconsole.log('After calling async');",
+        "correctCode": "console.log('Before async');\nconsole.log('Inside async');\nconsole.log('After calling async');\nconsole.log('After await');",
+        "hint": "The `await` keyword in an `async` function yields control back to the event loop. The code following `await` is treated as a microtask and executed after the current synchronous code block completes."
+      },
+      {
+        "language": "JavaScript",
+        "bugType": "Memory Leak",
+        "description": "Detached DOM nodes (Lang: JavaScript, Q20)",
+        "buggyCode": "<ul id=\"myList\"></ul>\n<script>\nlet list = document.getElementById('myList');\nfor(let i=0; i<5; i++) {\n    let item = document.createElement('li');\n    item.textContent = `Item ${i}`;\n    list.appendChild(item);\n}\n\n// Remove the list from the DOM, but if `item` references are still held,\n// the elements are not garbage collected.\nlist.remove();\n</script>",
+        "correctCode": "let list = document.getElementById('myList');\nconst items = [];\nfor(let i=0; i<5; i++) {\n    let item = document.createElement('li');\n    item.textContent = `Item ${i}`;\n    list.appendChild(item);\n    items.push(item); // Store refs if needed\n}\n\nlist.innerHTML = '';\n// If references were stored and are no longer needed:\n// items.length = 0; // Clear array",
+        "hint": "When DOM elements are removed, ensure that all JavaScript references to them are also cleared to allow garbage collection. Using `innerHTML = ''` is one way to clear child nodes and their references."
+      }
+    ],
+    "hard": []
+  },
+  "Java": {
+    "easy": [
+      {
+        "language": "Java",
+        "bugType": "Syntax Error",
+        "description": "Missing semicolon at the end of a statement (Lang: Java, Q1)",
+        "buggyCode": "public class MyClass {\n    public static void main(String[] args) {\n        System.out.println(\"Hello World\")\n    }\n}",
+        "correctCode": "public class MyClass {\n    public static void main(String[] args) {\n        System.out.println(\"Hello World\");\n    }\n}",
+        "hint": "Every statement in Java must end with a semicolon."
+      },
+      {
+        "language": "Java",
+        "bugType": "Logic Error",
+        "description": "Incorrect loop condition (Lang: Java, Q2)",
+        "buggyCode": "for (int i = 0; i <= 5; i++) {\n    if (i == 5) {\n        System.out.println(\"Found 5\");\n    }\n}",
+        "correctCode": "for (int i = 0; i < 5; i++) {\n    if (i == 4) { // Or change loop condition\n        System.out.println(\"Found 4\");\n    }\n}",
+        "hint": "The loop condition `i <= 5` will cause the loop to run 6 times (0 to 5). If you want 5 iterations (0 to 4), use `i < 5`."
+      },
+      {
+        "language": "Java",
+        "bugType": "Type Mismatch",
+        "description": "Assigning incompatible types (Lang: Java, Q3)",
+        "buggyCode": "int number = \"hello\";",
+        "correctCode": "int number = 5;",
+        "hint": "You cannot assign a String to an integer variable directly."
+      },
+      {
+        "language": "Java",
+        "bugType": "NullPointerException",
+        "description": "Dereferencing a null object (Lang: Java, Q4)",
+        "buggyCode": "String str = null;\nSystem.out.println(str.length());",
+        "correctCode": "String str = \"hello\";\nSystem.out.println(str.length());",
+        "hint": "Attempting to call a method on a `null` object will result in a NullPointerException."
+      },
+      {
+        "language": "Java",
+        "bugType": "ArrayIndexOutOfBoundsException",
+        "description": "Accessing array out of bounds (Lang: Java, Q5)",
+        "buggyCode": "int[] arr = {1, 2, 3};\nSystem.out.println(arr[3]);",
+        "correctCode": "int[] arr = {1, 2, 3};\nSystem.out.println(arr[2]); // Access last element correctly"
+        "hint": "Array indices in Java are 0-based. For an array of size N, valid indices range from 0 to N-1."
+      },
+      {
+        "language": "Java",
+        "bugType": "Syntax Error",
+        "description": "Missing curly brace (Lang: Java, Q6)",
+        "buggyCode": "public class Test {\n    public static void main(String[] args) {\n        System.out.println(\"Hello\");\n    }",
+        "correctCode": "public class Test {\n    public static void main(String[] args) {\n        System.out.println(\"Hello\");\n    }\n}",
+        "hint": "Make sure all opening curly braces `{` have a corresponding closing curly brace `}`."
+      },
+      {
+        "language": "Java",
+        "bugType": "Logic Error",
+        "description": "Incorrect boolean comparison (Lang: Java, Q7)",
+        "buggyCode": "boolean isValid = false;\nif (isValid = true) { // Assignment instead of comparison\n    System.out.println(\"Valid\");\n}",
+        "correctCode": "boolean isValid = false;\nif (isValid == true) { // Correct comparison\n    System.out.println(\"Valid\");\n}",
+        "hint": "Using a single equals sign `=` performs assignment. Use `==` for comparison, or simply `if (isValid)` for boolean variables."
+      },
+      {
+        "language": "Java",
+        "bugType": "Type Conversion",
+        "description": "Implicit conversion from float to int (Lang: Java, Q8)",
+        "buggyCode": "int x = 5.5f;",
+        "correctCode": "int x = (int) 5.5f; // Explicit cast\n// Or: float x = 5.5f;",
+        "hint": "Java does not allow implicit narrowing conversions. You need an explicit cast to convert a float to an int, which truncates the decimal part."
+      },
+      {
+        "language": "Java",
+        "bugType": "NullPointerException",
+        "description": "Dereferencing a null object (Lang: Java, Q9)",
+        "buggyCode": "List<String> names = null;\nSystem.out.println(names.size());",
+        "correctCode": "List<String> names = new ArrayList<>();\nSystem.out.println(names.size());",
+        "hint": "Before using an object, ensure it has been initialized and is not `null`."
+      },
+      {
+        "language": "Java",
+        "bugType": "ArrayIndexOutOfBoundsException",
+        "description": "Accessing array out of bounds (Lang: Java, Q10)",
+        "buggyCode": "String[] colors = {\"red\", \"green\"};\nSystem.out.println(colors[2]);",
+        "correctCode": "String[] colors = {\"red\", \"green\"};\nSystem.out.println(colors[1]);",
+        "hint": "The valid indices for an array of size 2 are 0 and 1."
+      },
+      {
+        "language": "Java",
+        "bugType": "Compilation Error",
+        "description": "Missing import statement (Lang: Java, Q11)",
+        "buggyCode": "public class Main {\n    public static void main(String[] args) {\n        ArrayList<String> list = new ArrayList<>();\n    }\n}",
+        "correctCode": "import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<String> list = new ArrayList<>();\n    }\n}",
+        "hint": "Classes from packages other than `java.lang` (e.g., `java.util.ArrayList`) must be imported."
+      },
+      {
+        "language": "Java",
+        "bugType": "Logic Error",
+        "description": "Integer division losing precision (Lang: Java, Q12)",
+        "buggyCode": "int a = 5;\nint b = 2;\nint result = a / b;\nSystem.out.println(result);",
+        "correctCode": "int a = 5;\nint b = 2;\ndouble result = (double) a / b;\nSystem.out.println(result);",
+        "hint": "In Java, integer division truncates any decimal part. To get a floating-point result, at least one operand must be a floating-point type."
+      },
+      {
+        "language": "Java",
+        "bugType": "ClassCastException",
+        "description": "Using wrong wrapper class for primitive (Lang: Java, Q13)",
+        "buggyCode": "Integer i = 10;\nLong l = (Long)i;",
+        "correctCode": "Integer i = 10;\nLong l = Long.valueOf(i.longValue()); // Explicit conversion\n// Or: long lPrim = i.longValue();",
+        "hint": "You cannot directly cast an `Integer` to a `Long`. You need to convert its primitive value."
+      },
+      {
+        "language": "Java",
+        "bugType": "NullPointerException",
+        "description": "Dereferencing a null object (Lang: Java, Q14)",
+        "buggyCode": "Map<String, String> map = null;\nmap.put(\"key\", \"value\");",
+        "correctCode": "Map<String, String> map = new HashMap<>();\nmap.put(\"key\", \"value\");",
+        "hint": "Ensure that `Map` objects are initialized before attempting to put elements into them."
+      },
+      {
+        "language": "Java",
+        "bugType": "Logic Error",
+        "description": "Off-by-one error in loop (Lang: Java, Q15)",
+        "buggyCode": "int[] numbers = {10, 20, 30};\nfor (int i = 0; i <= numbers.length; i++) {\n    System.out.println(numbers[i]);\n}",
+        "correctCode": "int[] numbers = {10, 20, 30};\nfor (int i = 0; i < numbers.length; i++) {\n    System.out.println(numbers[i]);\n}",
+        "hint": "The loop condition `i <= numbers.length` will try to access an index beyond the array's bounds. Use `i < numbers.length`."
+      },
+      {
+        "language": "Java",
+        "bugType": "Compilation Error",
+        "description": "Missing 'static' keyword for main method (Lang: Java, Q16)",
+        "buggyCode": "public class MyProgram {\n    public void main(String[] args) {\n        System.out.println(\"Hello\");\n    }\n}",
+        "correctCode": "public class MyProgram {\n    public static void main(String[] args) {\n        System.out.println(\"Hello\");\n    }\n}",
+        "hint": "The `main` method must be `static` so that it can be called without creating an object of the class."
+      },
+      {
+        "language": "Java",
+        "bugType": "Logic Error",
+        "description": "Incorrect string comparison (Lang: Java, Q17)",
+        "buggyCode": "String s1 = new String(\"hello\");\nString s2 = new String(\"hello\");\nif (s1 == s2) {\n    System.out.println(\"Strings are equal\");\n}",
+        "correctCode": "String s1 = new String(\"hello\");\nString s2 = new String(\"hello\");\nif (s1.equals(s2)) {\n    System.out.println(\"Strings are equal\");\n}",
+        "hint": "Use `equals()` to compare the content of strings. `==` compares object references."
+      },
+      {
+        "language": "Java",
+        "bugType": "ClassCastException",
+        "description": "Trying to cast incompatible types (Lang: Java, Q18)",
+        "buggyCode": "Object o = new Integer(10);\nString s = (String) o;",
+        "correctCode": "Object o = \"string\";\nString s = (String) o;",
+        "hint": "A `ClassCastException` occurs when you attempt to cast an object to a type it's not an instance of. You can only cast an object to its actual type or a supertype/interface it implements."
+      },
+      {
+        "language": "Java",
+        "bugType": "NullPointerException",
+        "description": "Dereferencing a null object (Lang: Java, Q19)",
+        "buggyCode": "class Student {\n    String name;\n    String getName() { return name; }\n}\nStudent student = new Student();\nSystem.out.println(student.getName().length()); // name is null by default",
+        "correctCode": "class Student {\n    String name = \"John\";\n    String getName() { return name; }\n}\nStudent student = new Student();\nSystem.out.println(student.getName());",
+        "hint": "Object fields are `null` by default if not initialized. Attempting to call a method on a `null` field will cause a `NullPointerException`."
+      },
+      {
+        "language": "Java",
+        "bugType": "ArrayIndexOutOfBoundsException",
+        "description": "Accessing array out of bounds (Lang: Java, Q20)",
+        "buggyCode": "int[] data = {5, 10};\nSystem.out.println(data[2]);",
+        "correctCode": "int[] data = {5, 10};\nSystem.out.println(data[1]);",
+        "hint": "Array indices start from 0. Accessing an index equal to the array's length will result in an `ArrayIndexOutOfBoundsException`."
+      }
+    ],
+    "medium": [
+      {
+        "language": "Java",
+        "bugType": "Concurrency Bug",
+        "description": "Race condition with non-atomic increment (Lang: Java, Q1)",
+        "buggyCode": "class Counter {\n    public int count = 0;\n    public void increment() {\n        count++;\n    }\n}",
+        "correctCode": "import java.util.concurrent.atomic.AtomicInteger;\n\nclass Counter {\n    public AtomicInteger count = new AtomicInteger(0);\n    public void increment() {\n        count.incrementAndGet();\n    }\n}\n\n// Or using synchronized:\n// class Counter {\n// public int count = 0;\n// public synchronized void increment() {\n// count++;\n// }\n// }",
+        "hint": "The `count++` operation is not atomic. It involves reading, modifying, and writing, which can be interrupted by other threads. Use `synchronized` or `AtomicInteger` for thread-safe operations."
+      },
+      {
+        "language": "Java",
+        "bugType": "Memory Leak",
+        "description": "Static collection holding object references (Lang: Java, Q2)",
+        "buggyCode": "import java.util.ArrayList;\nimport java.util.List;\n\npublic class LeakExample {\n    private static final List<Object> leakList = new ArrayList<>();\n\n    public void addAndForgetObject(Object obj) {\n        leakList.add(obj);\n        // Object is never removed, causing a potential leak\n    }\n}",
+        "correctCode": "import java.util.ArrayList;\nimport java.util.List;\n\npublic class LeakExample {\n    // Ensure objects are removed from static lists when no longer needed.\n    // Or use WeakHashMap/WeakReference if appropriate for caching scenarios.\n    private static final List<Object> leakList = new ArrayList<>();\n\n    public void addAndRemoveObject(Object obj) {\n        leakList.add(obj);\n        // ... later when obj is no longer needed ...\n        leakList.remove(obj);\n    }\n}",
+        "hint": "Static collections live for the entire application lifecycle. If objects are added to a static collection but never removed, they will not be garbage collected, leading to a memory leak."
+      },
+      {
+        "language": "Java",
+        "bugType": "Concurrency Bug",
+        "description": "Deadlock with two locks (Lang: Java, Q3)",
+        "buggyCode": "public class DeadlockExample {\n    private Object lock1 = new Object();\n    private Object lock2 = new Object();\n\n    public void method1() {\n        synchronized (lock1) {\n            System.out.println(\"Method 1 holding lock1\");\n            try { Thread.sleep(10); } catch (InterruptedException e) {}\n            synchronized (lock2) {\n                System.out.println(\"Method 1 holding lock1 and lock2\");\n            }\n        }\n    }\n\n    public void method2() {\n        synchronized (lock2) {\n            System.out.println(\"Method 2 holding lock2\");\n            try { Thread.sleep(10); } catch (InterruptedException e) {}\n            synchronized (lock1) {\n                System.out.println(\"Method 2 holding lock2 and lock1\");\n            }\n        }\n    }\n}",
+        "correctCode": "public class DeadlockExample {\n    private Object lock1 = new Object();\n    private Object lock2 = new Object();\n\n    public void method1() {\n        synchronized (lock1) {\n            System.out.println(\"Method 1 holding lock1\");\n            try { Thread.sleep(10); } catch (InterruptedException e) {}\n            synchronized (lock2) {\n                System.out.println(\"Method 1 holding lock1 and lock2\");\n            }\n        }\n    }\n\n    public void method2() {\n        synchronized (lock2) { // Changed acquisition order\n            System.out.println(\"Method 2 holding lock2\");\n            try { Thread.sleep(10); } catch (InterruptedException e) {}\n            synchronized (lock1) { // Changed acquisition order\n                System.out.println(\"Method 2 holding lock2 and lock1\");\n            }\n        }\n    }\n}",
+        "hint": "Deadlock occurs when two or more threads are blocked indefinitely, waiting for each other to release the resources they need. Consistent lock acquisition order can prevent this."
+      },
+      {
+        "language": "Java",
+        "bugType": "Resource Leak",
+        "description": "Resource not closed (Lang: Java, Q4)",
+        "buggyCode": "import java.io.BufferedReader;\nimport java.io.FileReader;\nimport java.io.IOException;\n\npublic class FileReaderExample {\n    public static void main(String[] args) {\n        BufferedReader reader = null;\n        try {\n            reader = new BufferedReader(new FileReader(\"example.txt\"));\n            String line;\n            while ((line = reader.readLine()) != null) {\n                System.out.println(line);\n            }\n        } catch (IOException e) {\n            e.printStackTrace();\n        }\n        // Missing reader.close() in finally block\n    }\n}",
+        "correctCode": "import java.io.BufferedReader;\nimport java.io.FileReader;\nimport java.io.IOException;\n\npublic class FileReaderExample {\n    public static void main(String[] args) {\n        try (BufferedReader reader = new BufferedReader(new FileReader(\"example.txt\"))) {\n            String line;\n            while ((line = reader.readLine()) != null) {\n                System.out.println(line);\n            }\n        } catch (IOException e) {\n            e.printStackTrace();\n        }\n    }\n}",
+        "hint": "Input/output streams and other resources must be closed to prevent resource leaks. Use a `try-with-resources` statement for automatic resource management."
+      },
+      {
+        "language": "Java",
+        "bugType": "Concurrency Bug",
+        "description": "Incorrect use of `notify()`/`notifyAll()` (Lang: Java, Q5)",
+        "buggyCode": "public class SharedResource {\n    private boolean dataReady = false;\n    private final Object lock = new Object();\n\n    public void produce() {\n        synchronized (lock) {\n            // Produce data\n            dataReady = true;\n            lock.notify(); // Only notifies one waiting thread\n        }\n    }\n\n    public void consume() {\n        synchronized (lock) {\n            if (!dataReady) { // Using if instead of while\n                try {\n                    lock.wait();\n                } catch (InterruptedException e) {}\n            }\n            // Consume data\n            dataReady = false;\n        }\n    }\n}",
+        "correctCode": "public class SharedResource {\n    private boolean dataReady = false;\n    private final Object lock = new Object();\n\n    public void produce() {\n        synchronized (lock) {\n            // Produce data\n            dataReady = true;\n            lock.notifyAll(); // Notify all waiting consumers\n        }\n    }\n\n    public void consume() {\n        synchronized (lock) {\n            while (!dataReady) { // Use while loop for spurious wakeups\n                try {\n                    lock.wait();\n                } catch (InterruptedException e) {\n                    Thread.currentThread().interrupt();\n                }\n            }\n            // Consume data\n            dataReady = false; // Reset for next production cycle\n        }\n    }\n}",
+        "hint": "Always use `while` loops with `wait()` to guard against spurious wakeups and ensure the condition is truly met. Use `notifyAll()` to wake up all waiting threads if multiple threads could be waiting on the same condition."
+      },
+      {
+        "language": "Java",
+        "bugType": "Memory Leak",
+        "description": "Memory leak with inner class references (Lang: Java, Q6)",
+        "buggyCode": "public class OuterClass {\n    private String data = \"Some Data\";\n\n    public class InnerClass {\n        public void display() {\n            System.out.println(OuterClass.this.data);\n        }\n    }\n\n    public InnerClass getInnerInstance() {\n        return new InnerClass();\n    }\n}",
+        "correctCode": "public class OuterClass {\n    private String data = \"Some Data\";\n\n    // Make InnerClass static to prevent implicit reference to OuterClass\n    public static class InnerClass {\n        public void display() {\n            // Cannot access OuterClass.this.data directly if InnerClass is static\n            // If data is needed, pass it as a parameter or make OuterClass a WeakReference\n            System.out.println(\"Displaying from static inner class\");\n        }\n    }\n\n    public InnerClass getInnerInstance() {\n        return new InnerClass();\n    }\n}",
+        "hint": "Non-static inner classes implicitly hold a strong reference to their outer class instance. This can lead to memory leaks if the inner class instance outlives the outer class instance that it should no longer be tied to."
+      },
+      {
+        "language": "Java",
+        "bugType": "Concurrency Bug",
+        "description": "Concurrency issue with `HashMap` (Lang: Java, Q7)",
+        "buggyCode": "import java.util.HashMap;\nimport java.util.Map;\n\npublic class ConcurrentMapExample {\n    private Map<String, Integer> map = new HashMap<>();\n\n    public void updateMap(String key, int value) {\n        map.put(key, value);\n    }\n}",
+        "correctCode": "import java.util.Collections;\nimport java.util.HashMap;\nimport java.util.Map;\nimport java.util.concurrent.ConcurrentHashMap;\n\npublic class ConcurrentMapExample {\n    // Use ConcurrentHashMap for thread-safe operations\n    private Map<String, Integer> map = new ConcurrentHashMap<>();\n\n    public void updateMap(String key, int value) {\n        map.put(key, value);\n    }\n\n    public int getValue(String key) {\n        return map.getOrDefault(key, 0);\n    }\n}",
+        "hint": "`HashMap` is not thread-safe. Concurrent modifications can lead to unexpected behavior, including infinite loops or data corruption. Use `ConcurrentHashMap` or synchronize access to the `HashMap`."
+      },
+      {
+        "language": "Java",
+        "bugType": "Exception Handling",
+        "description": "Incorrect exception handling (Lang: Java, Q8)",
+        "buggyCode": "public class ExceptionExample {\n    public void processFile(String fileName) {\n        try {\n            // Simulate file operation\n            if (fileName == null || fileName.isEmpty()) {\n                throw new IllegalArgumentException(\"File name cannot be empty.\");\n            }\n            System.out.println(\"Processing file: \" + fileName);\n        } catch (Exception e) { // Catching generic Exception too early\n            e.printStackTrace();\n        }\n    }\n}",
+        "correctCode": "public class ExceptionExample {\n    public void processFile(String fileName) {\n        try {\n            // Simulate file operation\n            if (fileName == null || fileName.isEmpty()) {\n                throw new IllegalArgumentException(\"File name cannot be empty.\");\n            }\n            System.out.println(\"Processing file: \" + fileName);\n        } catch (IllegalArgumentException e) {\n            System.err.println(\"Error: \" + e.getMessage());\n            // Log the exception, don't just print stack trace\n        } catch (Exception e) { // Catch more general exceptions if necessary, after specific ones\n            System.err.println(\"An unexpected error occurred: \" + e.getMessage());\n        } finally {\n            System.out.println(\"File processing attempt finished.\");\n        }\n    }\n}",
+        "hint": "Catch specific exceptions before more general ones. Avoid catching `Exception` too broadly, as it can hide other issues. Log exceptions properly instead of just printing the stack trace."
+      },
+      {
+        "language": "Java",
+        "bugType": "Concurrency Bug",
+        "description": "Thread starvation due to busy-waiting (Lang: Java, Q9)",
+        "buggyCode": "public class BusyWaitExample {\n    private volatile boolean ready = false;\n\n    public void waitForReady() {\n        while (!ready) {\n            // Busy-waiting, consumes CPU cycles unnecessarily\n        }\n        System.out.println(\"Ready state detected!\");\n    }\n\n    public void setReady() {\n        ready = true;\n    }\n}",
+        "correctCode": "public class BusyWaitExample {\n    private volatile boolean ready = false;\n    private final Object lock = new Object();\n\n    public void waitForReady() {\n        synchronized (lock) {\n            while (!ready) {\n                try {\n                    lock.wait(); // Release lock and wait for notification\n                } catch (InterruptedException e) {\n                    Thread.currentThread().interrupt();\n                    return;\n                }\n            }\n            System.out.println(\"Ready state detected!\");\n        }\n    }\n\n    public void setReady() {\n        synchronized (lock) {\n            ready = true;\n            lock.notifyAll(); // Notify waiting threads\n        }\n    }\n}",
+        "hint": "Busy-waiting (spinning in a loop) wastes CPU cycles and can lead to thread starvation. Use `wait()` and `notify()`/`notifyAll()` for efficient thread coordination."
+      },
+      {
+        "language": "Java",
+        "bugType": "Resource Leak",
+        "description": "Memory leak from unclosed streams (Lang: Java, Q10)",
+        "buggyCode": "import java.io.FileInputStream;\nimport java.io.IOException;\n\npublic class FileStreamLeak {\n    public void readFile(String path) {\n        FileInputStream fis = null;\n        try {\n            fis = new FileInputStream(path);\n            int content;\n            while ((content = fis.read()) != -1) {\n                System.out.print((char) content);\n            }\n        } catch (IOException e) {\n            e.printStackTrace();\n        } finally {\n            // Missing fis.close() inside finally block\n        }\n    }\n}",
+        "correctCode": "import java.io.FileInputStream;\nimport java.io.IOException;\n\npublic class FileStreamLeak {\n    public void readFile(String path) {\n        try (FileInputStream fis = new FileInputStream(path)) { // Using try-with-resources\n            int content;\n            while ((content = fis.read()) != -1) {\n                System.out.print((char) content);\n            }\n        } catch (IOException e) {\n            e.printStackTrace();\n        }\n    }\n}",
+        "hint": "Input/output streams, database connections, and other external resources must be closed in a `finally` block or using `try-with-resources` to prevent resource leaks."
+      },
+      {
+        "language": "Java",
+        "bugType": "Concurrency Bug",
+        "description": "Concurrency issue with `ArrayList` (Lang: Java, Q11)",
+        "buggyCode": "import java.util.ArrayList;\nimport java.util.List;\n\npublic class ConcurrentListExample {\n    private List<Integer> list = new ArrayList<>();\n\n    public void addElement(int element) {\n        list.add(element);\n    }\n}",
+        "correctCode": "import java.util.ArrayList;\nimport java.util.Collections;\nimport java.util.List;\nimport java.util.concurrent.CopyOnWriteArrayList;\n\npublic class ConcurrentListExample {\n    // Option 1: Use a synchronized list\n    // private List<Integer> list = Collections.synchronizedList(new ArrayList<>());\n    // Option 2: Use CopyOnWriteArrayList for read-heavy operations\n    private List<Integer> list = new CopyOnWriteArrayList<>();\n\n    public void addElement(int element) {\n        list.add(element);\n    }\n\n    public int getSize() {\n        return list.size();\n    }\n}",
+        "hint": "`ArrayList` is not thread-safe. If multiple threads modify it concurrently, it can lead to `ConcurrentModificationException` or data inconsistency. Use `Collections.synchronizedList()` or `CopyOnWriteArrayList` for thread safety."
+      },
+      {
+        "language": "Java",
+        "bugType": "Performance Issue",
+        "description": "Inefficient string concatenation in loop (Lang: Java, Q12)",
+        "buggyCode": "public class StringConcatenation {\n    public String buildString(int count) {\n        String result = \"\";\n        for (int i = 0; i < count; i++) {\n            result += \"Number: \" + i + \"\\n\";\n        }\n        return result;\n    }\n}",
+        "correctCode": "public class StringConcatenation {\n    public String buildString(int count) {\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < count; i++) {\n            sb.append(\"Number: \").append(i).append(\"\\n\");\n        }\n        return sb.toString();\n    }\n}",
+        "hint": "Repeated string concatenation using `+` creates many intermediate String objects, which is inefficient. Use `StringBuilder` for efficient string manipulation in loops."
+      },
+      {
+        "language": "Java",
+        "bugType": "Concurrency Bug",
+        "description": "Incorrect use of `Thread.join()` (Lang: Java, Q13)",
+        "buggyCode": "public class ThreadJoinExample {\n    public static void main(String[] args) {\n        Thread thread1 = new Thread(() -> {\n            try {\n                Thread.sleep(1000);\n                System.out.println(\"Thread 1 finished\");\n            } catch (InterruptedException e) {}\n        });\n\n        Thread thread2 = new Thread(() -> {\n            try {\n                Thread.sleep(500);\n                System.out.println(\"Thread 2 finished\");\n            } catch (InterruptedException e) {}\n        });\n\n        thread1.start();\n        thread2.start();\n\n        // Missing join() calls, main thread might finish before others\n        System.out.println(\"Main thread finished\");\n    }\n}",
+        "correctCode": "public class ThreadJoinExample {\n    public static void main(String[] args) throws InterruptedException {\n        Thread thread1 = new Thread(() -> {\n            try {\n                Thread.sleep(1000);\n                System.out.println(\"Thread 1 finished\");\n            } catch (InterruptedException e) {\n                Thread.currentThread().interrupt();\n            }\n        });\n\n        Thread thread2 = new Thread(() -> {\n            try {\n                Thread.sleep(500);\n                System.out.println(\"Thread 2 finished\");\n            } catch (InterruptedException e) {\n                Thread.currentThread().interrupt();\n            }\n        });\n\n        thread1.start();\n        thread2.start();\n\n        thread1.join(); // Wait for thread1 to complete\n        thread2.join(); // Wait for thread2 to complete\n\n        System.out.println(\"All threads finished\");\n    }\n}",
+        "hint": "The `join()` method causes the current thread to wait until the thread it is joining with terminates. Without `join()`, the main thread might complete before the worker threads."
+      },
+      {
+        "language": "Java",
+        "bugType": "Memory Leak",
+        "description": "Memory leak with event listeners (Lang: Java, Q14)",
+        "buggyCode": "import java.util.EventListener;\nimport java.util.EventObject;\nimport java.util.Vector;\n\npublic class EventManager {\n    private Vector<MyListener> listeners = new Vector<>();\n\n    public void addListener(MyListener listener) {\n        listeners.add(listener);\n    }\n\n    public void fireEvent(MyEvent event) {\n        for (MyListener listener : listeners) {\n            listener.onEvent(event);\n        }\n    }\n\n    // Listener interface and Event class for example\n    interface MyListener extends EventListener {\n        void onEvent(MyEvent event);\n    }\n\n    static class MyEvent extends EventObject {\n        public MyEvent(Object source) {\n            super(source);\n        }\n    }\n}",
+        "correctCode": "import java.util.EventListener;\nimport java.util.EventObject;\nimport java.util.Vector;\n\npublic class EventManager {\n    private Vector<MyListener> listeners = new Vector<>();\n\n    public void addListener(MyListener listener) {\n        listeners.add(listener);\n    }\n\n    public void removeListener(MyListener listener) {\n        listeners.remove(listener); // Ensure listener is removed when no longer needed\n    }\n\n    public void fireEvent(MyEvent event) {\n        for (MyListener listener : listeners) {\n            listener.onEvent(event);\n        }\n    }\n\n    // Example Listener and Event classes\n    interface MyListener extends EventListener {\n        void onEvent(MyEvent event);\n    }\n\n    static class MyEvent extends EventObject {\n        public MyEvent(Object source) {\n            super(source);\n        }\n    }\n}",
+        "hint": "If event listeners are added to a component but never removed, they can prevent the listener objects (and potentially the objects they reference) from being garbage collected, leading to a memory leak."
+      },
+      {
+        "language": "Java",
+        "bugType": "Concurrency Bug",
+        "description": "Improper synchronization of shared object (Lang: Java, Q15)",
+        "buggyCode": "public class SharedObject {\n    private int value = 0;\n\n    public void increment() {\n        value++; // Not thread-safe\n    }\n\n    public int getValue() {\n        return value;\n    }\n}",
+        "correctCode": "public class SharedObject {\n    private int value = 0;\n    private final Object lock = new Object();\n\n    public void increment() {\n        synchronized (lock) {\n            value++;\n        }\n    }\n\n    public int getValue() {\n        synchronized (lock) {\n            return value;\n        }\n    }\n}",
+        "hint": "Shared mutable state accessed by multiple threads must be protected by synchronization (e.g., using `synchronized` blocks or atomic variables) to prevent race conditions."
+      },
+      {
+        "language": "Java",
+        "bugType": "Logic Error",
+        "description": "Incorrect use of `equals()` and `hashCode()` (Lang: Java, Q16)",
+        "buggyCode": "import java.util.HashMap;\nimport java.util.Map;\n\npublic class CustomKey {\n    private int id;\n    private String name;\n\n    public CustomKey(int id, String name) {\n        this.id = id;\n        this.name = name;\n    }\n    // Missing equals() and hashCode() override\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Map<CustomKey, String> map = new HashMap<>();\n        CustomKey key1 = new CustomKey(1, \"A\");\n        CustomKey key2 = new CustomKey(1, \"A\");\n        map.put(key1, \"Value1\");\n        System.out.println(map.get(key2)); // Might return null\n    }\n}",
+        "correctCode": "import java.util.Objects;\n\npublic class CustomKey {\n    private final int id;\n    private final String name;\n\n    public CustomKey(int id, String name) {\n        this.id = id;\n        this.name = name;\n    }\n\n    @Override\n    public boolean equals(Object o) {\n        if (this == o) return true;\n        if (o == null || getClass() != o.getClass()) return false;\n        CustomKey customKey = (CustomKey) o;\n        return id == customKey.id &&\n               Objects.equals(name, customKey.name);\n    }\n\n    @Override\n    public int hashCode() {\n        return Objects.hash(id, name);\n    }\n}",
+        "hint": "When custom objects are used as keys in `HashMap` or other hash-based collections, `equals()` and `hashCode()` methods must be correctly overridden to ensure proper behavior."
+      },
+      {
+        "language": "Java",
+        "bugType": "Performance Issue",
+        "description": "Unnecessary object creation in loop (Lang: Java, Q17)",
+        "buggyCode": "import java.util.ArrayList;\nimport java.util.List;\n\npublic class ObjectCreationLoop {\n    public List<Integer> createList(int count) {\n        List<Integer> list = new ArrayList<>();\n        for (int i = 0; i < count; i++) {\n            list.add(new Integer(i)); // Creates a new Integer object each time\n        }\n        return list;\n    }\n}",
+        "correctCode": "import java.util.ArrayList;\nimport java.util.List;\n\npublic class ObjectCreationLoop {\n    public List<Integer> createList(int count) {\n        List<Integer> list = new ArrayList<>();\n        for (int i = 0; i < count; i++) {\n            list.add(Integer.valueOf(i)); // Use valueOf for caching small integers\n        }\n        return list;\n    }\n}",
+        "hint": "Avoid unnecessary object creation inside loops, especially for small, immutable objects. `Integer.valueOf()` uses a cache for common integer values, improving performance."
+      },
+      {
+        "language": "Java",
+        "bugType": "Concurrency Bug",
+        "description": "Deadlock with two locks (Lang: Java, Q18)",
+        "buggyCode": "public class AnotherDeadlockExample {\n    private Object resourceA = new Object();\n    private Object resourceB = new Object();\n\n    public void operation1() {\n        synchronized (resourceA) {\n            System.out.println(\"Op1: Acquired A\");\n            try { Thread.sleep(50); } catch (InterruptedException e) {}\n            synchronized (resourceB) {\n                System.out.println(\"Op1: Acquired B\");\n            }\n        }\n    }\n\n    public void operation2() {\n        synchronized (resourceB) {\n            System.out.println(\"Op2: Acquired B\");\n            try { Thread.sleep(50); } catch (InterruptedException e) {}\n            synchronized (resourceA) {\n                System.out.println(\"Op2: Acquired A\");\n            }\n        }\n    }\n}",
+        "correctCode": "public class AnotherDeadlockExample {\n    private Object resourceA = new Object();\n    private Object resourceB = new Object();\n\n    public void operation1() {\n        synchronized (resourceA) {\n            System.out.println(\"Op1: Acquired A\");\n            try { Thread.sleep(50); } catch (InterruptedException e) {}\n            synchronized (resourceB) {\n                System.out.println(\"Op1: Acquired B\");\n            }\n        }\n    }\n\n    public void operation2() {\n        synchronized (resourceA) { // Changed acquisition order for B\n            System.out.println(\"Op2: Acquired A\");\n            try { Thread.sleep(50); } catch (InterruptedException e) {}\n            synchronized (resourceB) {\n                System.out.println(\"Op2: Acquired B\");\n            }\n        }\n    }\n}",
+        "hint": "Deadlocks often occur when threads acquire multiple locks in different orders. Establish a consistent lock ordering protocol to prevent this."
+      },
+      {
+        "language": "Java",
+        "bugType": "Resource Leak",
+        "description": "Resource not closed (Lang: Java, Q19)",
+        "buggyCode": "import java.io.FileOutputStream;\nimport java.io.IOException;\n\npublic class FileOutputStreamExample {\n    public void writeToFile(String filePath, String content) {\n        FileOutputStream fos = null;\n        try {\n            fos = new FileOutputStream(filePath);\n            fos.write(content.getBytes());\n        } catch (IOException e) {\n            e.printStackTrace();\n        } finally {\n            // Missing fos.close() here\n        }\n    }\n}",
+        "correctCode": "import java.io.FileOutputStream;\nimport java.io.IOException;\n\npublic class FileOutputStreamExample {\n    public void writeToFile(String filePath, String content) {\n        try (FileOutputStream fos = new FileOutputStream(filePath)) {\n            fos.write(content.getBytes());\n        } catch (IOException e) {\n            e.printStackTrace();\n        }\n    }\n}",
+        "hint": "Ensure that `FileOutputStream` and other I/O streams are properly closed to release system resources, even if exceptions occur. `try-with-resources` is the preferred way."
+      },
+      {
+        "language": "Java",
+        "bugType": "Concurrency Bug",
+        "description": "Incorrect use of `wait()` and `notify()` (Lang: Java, Q20)",
+        "buggyCode": "import java.util.ArrayList;\nimport java.util.List;\n\npublic class ProducerConsumer {\n    private final List<Integer> buffer = new ArrayList<>();\n    private final int CAPACITY = 5;\n    private final Object lock = new Object();\n\n    public void produce(int item) throws InterruptedException {\n        synchronized (lock) {\n            if (buffer.size() == CAPACITY) { // Using if instead of while\n                lock.wait();\n            }\n            buffer.add(item);\n            System.out.println(\"Produced: \" + item);\n            lock.notify(); // Only notifies one waiting thread\n        }\n    }\n\n    public int consume() throws InterruptedException {\n        synchronized (lock) {\n            if (buffer.isEmpty()) { // Using if instead of while\n                lock.wait();\n            }\n            int item = buffer.remove(0);\n            System.out.println(\"Consumed: \" + item);\n            lock.notify(); // Only notifies one waiting thread\n            return item;\n        }\n    }\n}",
+        "correctCode": "public class ProducerConsumer {\n    private final List<Integer> buffer = new ArrayList<>();\n    private final int CAPACITY = 5;\n    private final Object lock = new Object();\n\n    public void produce(int item) throws InterruptedException {\n        synchronized (lock) {\n            while (buffer.size() == CAPACITY) {\n                lock.wait();\n            }\n            buffer.add(item);\n            System.out.println(\"Produced: \" + item);\n            lock.notifyAll(); // Notify consumers\n        }\n    }\n\n    public int consume() throws InterruptedException {\n        synchronized (lock) {\n            while (buffer.isEmpty()) {\n                lock.wait();\n            }\n            int item = buffer.remove(0);\n            System.out.println(\"Consumed: \" + item);\n            lock.notifyAll(); // Notify producers\n            return item;\n        }\n    }\n}",
+        "hint": "In producer-consumer problems, always use a `while` loop with `wait()` to recheck the condition after waking up. Use `notifyAll()` instead of `notify()` to avoid potential deadlocks or starvation if multiple producers/consumers are waiting."
+      }
+    ],
+    "hard": []
+  },
+  "DotNet": {
+    "easy": [
+      {
+        "language": "DotNet",
+        "bugType": "Syntax Error",
+        "description": "Missing semicolon at end of statement (Lang: DotNet, Q1)",
+        "buggyCode": "public class MyClass\n{\n    public static void Main(string[] args)\n    {\n        System.Console.WriteLine(\"Hello World\")\n    }\n}",
+        "correctCode": "public class MyClass\n{\n    public static void Main(string[] args)\n    {\n        System.Console.WriteLine(\"Hello World\");\n    }\n}",
+        "hint": "Statements in C# typically end with a semicolon."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Logic Error",
+        "description": "Incorrect comparison operator (Lang: DotNet, Q2)",
+        "buggyCode": "public class AgeChecker\n{\n    public bool CanVote(int age)\n    {\n        if (age = 18) // Assignment instead of comparison\n        {\n            return true;\n        }\n        return false;\n    }\n}",
+        "correctCode": "public class AgeChecker\n{\n    public bool CanVote(int age)\n    {\n        if (age >= 18)\n        {\n            return true;\n        }\n        return false;\n    }\n}",
+        "hint": "The single equals sign (`=`) is for assignment. Use `==` for comparison."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Type Mismatch",
+        "description": "Type mismatch in assignment (Lang: DotNet, Q3)",
+        "buggyCode": "int number = \"hello\";",
+        "correctCode": "int number = 5;\nstring text = \"Hello\";",
+        "hint": "You cannot directly assign a string value to an integer variable. Type conversion is required."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "NullReferenceException",
+        "description": "NullReferenceException when dereferencing null (Lang: DotNet, Q4)",
+        "buggyCode": "string str = null;\nSystem.Console.WriteLine(str.Length);",
+        "correctCode": "string str = \"hello\";\nSystem.Console.WriteLine(str.Length);",
+        "hint": "Attempting to access members of a null object will result in a `NullReferenceException`."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "IndexOutOfRangeException",
+        "description": "IndexOutOfRangeException when accessing array (Lang: DotNet, Q5)",
+        "buggyCode": "int[] arr = { 1, 2, 3 };\nSystem.Console.WriteLine(arr[3]);",
+        "correctCode": "int[] arr = { 1, 2, 3 };\nSystem.Console.WriteLine(arr[2]);",
+        "hint": "Array indices in C# are 0-based. An `IndexOutOfRangeException` occurs when you try to access an index outside the valid range (0 to Length - 1)."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Syntax Error",
+        "description": "Missing curly brace (Lang: DotNet, Q6)",
+        "buggyCode": "public class Test\n{\n    public static void Main(string[] args)\n    {\n        System.Console.WriteLine(\"Hello\");\n    }\n",
+        "correctCode": "public class Test\n{\n    public static void Main(string[] args)\n    {\n        System.Console.WriteLine(\"Hello\");\n    }\n}",
+        "hint": "Ensure all opening curly braces `{` have a corresponding closing curly brace `}`."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Logic Error",
+        "description": "Incorrect boolean assignment in if condition (Lang: DotNet, Q7)",
+        "buggyCode": "bool isValid = false;\nif (isValid = true) // Assignment instead of comparison\n{\n    System.Console.WriteLine(\"Valid\");\n}",
+        "correctCode": "bool isValid = false;\nif (isValid == true) // Correct comparison\n{\n    System.Console.WriteLine(\"Valid\");\n}",
+        "hint": "Using `=` (assignment) in a boolean condition often leads to logic errors. Use `==` for comparison or simply `if (isValid)` for boolean variables."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Type Conversion",
+        "description": "Implicit conversion from float/double to int (Lang: DotNet, Q8)",
+        "buggyCode": "int x = 5.5f;",
+        "correctCode": "int x = (int)5.5f; // Explicit cast\n// Or: float x = 5.5f;",
+        "hint": "C# does not allow implicit narrowing conversions. You must explicitly cast a floating-point number to an integer, which truncates the decimal part."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "NullReferenceException",
+        "description": "NullReferenceException for uninitialized list (Lang: DotNet, Q9)",
+        "buggyCode": "System.Collections.Generic.List<string> names = null;\nSystem.Console.WriteLine(names.Count);",
+        "correctCode": "System.Collections.Generic.List<string> names = new System.Collections.Generic.List<string>();\nSystem.Console.WriteLine(names.Count);",
+        "hint": "Ensure that collection objects like `List<T>` are initialized before attempting to access their properties or methods."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "IndexOutOfRangeException",
+        "description": "IndexOutOfRangeException for array (Lang: DotNet, Q10)",
+        "buggyCode": "string[] colors = { \"red\", \"green\" };\nSystem.Console.WriteLine(colors[2]);",
+        "correctCode": "string[] colors = { \"red\", \"green\" };\nSystem.Console.WriteLine(colors[1]);",
+        "hint": "The maximum valid index for an array is `Length - 1`."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Compilation Error",
+        "description": "Missing `using` directive (Lang: DotNet, Q11)",
+        "buggyCode": "public class MainClass\n{\n    public static void Main(string[] args)\n    {\n        List<string> list = new List<string>();\n    }\n}",
+        "correctCode": "using System.Collections.Generic;\n\npublic class MainClass\n{\n    public static void Main(string[] args)\n    {\n        List<string> list = new List<string>();\n    }\n}",
+        "hint": "To use types from other namespaces (like `List<T>` from `System.Collections.Generic`), you need a `using` directive."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Logic Error",
+        "description": "Integer division losing precision (Lang: DotNet, Q12)",
+        "buggyCode": "int a = 5;\nint b = 2;\nint result = a / b;\nSystem.Console.WriteLine(result);",
+        "correctCode": "int a = 5;\nint b = 2;\ndouble result = (double)a / b;\nSystem.Console.WriteLine(result);",
+        "hint": "In C#, integer division truncates the decimal part. To get a floating-point result, cast at least one operand to a floating-point type."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Type Mismatch",
+        "description": "Type mismatch with value types (Lang: DotNet, Q13)",
+        "buggyCode": "int i = 10;\nlong l = i; // Implicit conversion for compatible types\n// Or: long l = (long)i;",
+        "correctCode": "int i = 10;\nlong l = i; // Implicit conversion for compatible types\n// Or: long l = (long)i;",
+        "hint": "While C# allows implicit conversion from `int` to `long` (widening conversion), it doesn't allow implicit conversion from `long` to `int` (narrowing conversion) without a cast."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "NullReferenceException",
+        "description": "NullReferenceException for uninitialized dictionary (Lang: DotNet, Q14)",
+        "buggyCode": "System.Collections.Generic.Dictionary<string, string> map = null;\nmap.Add(\"key\", \"value\");",
+        "correctCode": "System.Collections.Generic.Dictionary<string, string> map = new System.Collections.Generic.Dictionary<string, string>();\nmap.Add(\"key\", \"value\");",
+        "hint": "A `Dictionary<TKey, TValue>` must be instantiated before you can add elements to it."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Logic Error",
+        "description": "Off-by-one error in loop (Lang: DotNet, Q15)",
+        "buggyCode": "int[] numbers = { 10, 20, 30 };\nfor (int i = 0; i <= numbers.Length; i++)\n{\n    System.Console.WriteLine(numbers[i]);\n}",
+        "correctCode": "int[] numbers = { 10, 20, 30 };\nfor (int i = 0; i < numbers.Length; i++)\n{\n    System.Console.WriteLine(numbers[i]);\n}",
+        "hint": "The loop condition `i <= numbers.Length` will cause an `IndexOutOfRangeException` on the last iteration."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Logic Error",
+        "description": "Incorrect string comparison (Lang: DotNet, Q16)",
+        "buggyCode": "string s1 = \"hello\";\nstring s2 = \"hello\";\nif (s1 == s2)\n{\n    System.Console.WriteLine(\"Strings are equal\");\n}",
+        "correctCode": "string s1 = \"hello\";\nstring s2 = \"hello\";\nif (s1.Equals(s2)) // Correct content comparison\n{\n    System.Console.WriteLine(\"Strings are equal\");\n}",
+        "hint": "For string content comparison, use the `Equals()` method. The `==` operator for strings compares references (for interned strings) or content (for non-interned strings), but `Equals()` is always reliable for content."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Unhandled Exception",
+        "description": "Unhandled exception (Lang: DotNet, Q17)",
+        "buggyCode": "public class ExceptionHandling\n{\n    public void Divide(int a, int b)\n    {\n        int result = a / b;\n        System.Console.WriteLine(result);\n    }\n}",
+        "correctCode": "public class ExceptionHandling\n{\n    public void Divide(int a, int b)\n    {\n        try\n        {\n            int result = a / b;\n            System.Console.WriteLine(result);\n        }\n        catch (System.DivideByZeroException ex)\n        {\n            System.Console.WriteLine(\"Error: \" + ex.Message);\n        }\n    }\n}",
+        "hint": "Code that might throw an exception should be enclosed in a `try-catch` block to handle errors gracefully."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Resource Leak",
+        "description": "Incorrect use of `finally` block (Lang: DotNet, Q18)",
+        "buggyCode": "public class ResourceHandler\n{\n    public void Process()\n    {\n        System.IO.StreamReader reader = new System.IO.StreamReader(\"file.txt\");\n        try\n        {\n            // Process file\n        }\n        finally\n        {\n            reader.Dispose(); // Throws NullReferenceException if constructor fails\n        }\n    }\n}",
+        "correctCode": "public class ResourceHandler\n{\n    public void Process()\n    {\n        System.IO.StreamReader reader = null;\n        try\n        {\n            reader = new System.IO.StreamReader(\"file.txt\");\n            // Process file\n        }\n        finally\n        {\n            if (reader != null)\n            {\n                reader.Dispose(); // Ensure dispose is called\n            }\n        }\n    }\n}",
+        "hint": "The `finally` block always executes. If an exception occurs during object initialization in the `try` block, the object might be null, causing a `NullReferenceException` in `finally`. Use `using` statements for automatic disposal."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Concurrency Bug",
+        "description": "Non-volatile field leading to stale data (Lang: DotNet, Q19)",
+        "buggyCode": "using System;\nusing System.Threading;\n\npublic class CacheUpdater\n{\n    private bool _dataReady = false;\n\n    public void MarkDataReady()\n    {\n        _dataReady = true;\n    }\n\n    public bool IsDataReady()\n    {\n        return _dataReady;\n    }\n}",
+        "correctCode": "using System;\nusing System.Threading;\n\npublic class CacheUpdater\n{\n    private volatile bool _dataReady = false;\n\n    public void MarkDataReady()\n    {\n        _dataReady = true;\n    }\n\n    public bool IsDataReady()\n    {\n        return _dataReady;\n    }\n}",
+        "hint": "Without the `volatile` keyword, the compiler or processor might optimize reads/writes to `_dataReady`, leading to stale data being read by other threads. `volatile` ensures reads and writes are always from main memory."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Logic Error",
+        "description": "Missing `break` in `switch` statement (Lang: DotNet, Q20)",
+        "buggyCode": "public class SwitchExample\n{\n    public void ProcessChoice(int choice)\n    {\n        switch (choice)\n        {\n            case 1:\n                System.Console.WriteLine(\"Choice 1\");\n            case 2:\n                System.Console.WriteLine(\"Choice 2\");\n                break;\n            default:\n                System.Console.WriteLine(\"Unknown choice\");\n                break;\n        }\n    }\n}",
+        "correctCode": "public class SwitchExample\n{\n    public void ProcessChoice(int choice)\n    {\n        switch (choice)\n        {\n            case 1:\n                System.Console.WriteLine(\"Choice 1\");\n                break;\n            case 2:\n                System.Console.WriteLine(\"Choice 2\");\n                break;\n            default:\n                System.Console.WriteLine(\"Unknown choice\");\n                break;\n        }\n    }\n}",
+        "hint": "In C#, `case` blocks in a `switch` statement must end with a `break`, `return`, `goto`, or `throw` to prevent 'fall-through' to the next case (unless the case is empty)."
+      }
+    ],
+    "medium": [
+      {
+        "language": "DotNet",
+        "bugType": "Concurrency Bug",
+        "description": "Race condition with non-atomic increment (Lang: DotNet, Q1)",
+        "buggyCode": "using System.Threading;\n\npublic class Counter\n{\n    private int _count = 0;\n\n    public void Increment()\n    {\n        _count++; // Not atomic\n    }\n\n    public int GetCount()\n    {\n        return _count;\n    }\n}",
+        "correctCode": "using System.Threading;\n\npublic class Counter\n{\n    private int _count = 0;\n\n    public void Increment()\n    {\n        Interlocked.Increment(ref _count); // Atomic increment\n    }\n\n    public int GetCount()\n    {\n        return Interlocked.CompareExchange(ref _count, 0, 0); // Atomic read\n    }\n}",
+        "hint": "Simple increment operations (`++`) are not atomic. In a multi-threaded environment, use `Interlocked.Increment` for atomic operations or `lock` for larger critical sections."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Memory Leak",
+        "description": "Memory leak due to unmanaged resource not disposed (Lang: DotNet, Q2)",
+        "buggyCode": "using System;\nusing System.Runtime.InteropServices;\n\npublic class MyResource : IDisposable\n{\n    // Simulate an unmanaged resource handle\n    private IntPtr _handle;\n\n    public MyResource(IntPtr handle)\n    {\n        _handle = handle;\n    }\n\n    public void Dispose()\n    {\n        // Missing logic to free unmanaged resources\n    }\n\n    // Missing finalizer\n}",
+        "correctCode": "using System;\nusing System.Runtime.InteropServices;\n\npublic class MyResource : IDisposable\n{\n    // Simulate an unmanaged resource handle\n    private IntPtr _handle;\n    private bool _disposed = false;\n\n    public MyResource(IntPtr handle)\n    {\n        _handle = handle;\n    }\n\n    // Public implementation of Dispose pattern callable by consumers.\n    public void Dispose()\n    {\n        Dispose(true);\n        GC.SuppressFinalize(this);\n    }\n\n    // Protected implementation of Dispose pattern.\n    protected virtual void Dispose(bool disposing)\n    {\n        if (_disposed)\n            return;\n\n        if (disposing)\n        {\n            // Dispose managed state (managed objects).\n        }\n\n        // Free unmanaged resources (unmanaged objects) and override a finalizer below.\n        // Set large fields to null.\n        if (_handle != IntPtr.Zero)\n        {\n            // Call appropriate native methods to free the handle\n            _handle = IntPtr.Zero;\n        }\n\n        _disposed = true;\n    }\n\n    // Use C# finalizer syntax for unmanaged resources cleanup\n    ~MyResource()\n    {\n        Dispose(false);\n    }\n}",
+        "hint": "Classes that manage unmanaged resources (e.g., file handles, network sockets) must implement the `IDisposable` interface and often a finalizer to ensure resources are released, even if `Dispose()` is not explicitly called."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Concurrency Bug",
+        "description": "Deadlock with two locks (Lang: DotNet, Q3)",
+        "buggyCode": "using System.Threading;\n\npublic class DeadlockExample\n{\n    private object lock1 = new object();\n    private object lock2 = new object();\n\n    public void Method1()\n    {\n        lock (lock1)\n        {\n            System.Console.WriteLine(\"Method 1 holding lock1\");\n            Thread.Sleep(10);\n            lock (lock2)\n            {\n                System.Console.WriteLine(\"Method 1 holding lock1 and lock2\");\n            }\n        }\n    }\n\n    public void Method2()\n    {\n        lock (lock2)\n        {\n            System.Console.WriteLine(\"Method 2 holding lock2\");\n            Thread.Sleep(10);\n            lock (lock1)\n            {\n                System.Console.WriteLine(\"Method 2 holding lock2 and lock1\");\n            }\n        }\n    }\n}",
+        "correctCode": "using System.Threading;\n\npublic class DeadlockExample\n{\n    private object lock1 = new object();\n    private object lock2 = new object();\n\n    public void Method1()\n    {\n        lock (lock1)\n        {\n            System.Console.WriteLine(\"Method 1 holding lock1\");\n            Thread.Sleep(10);\n            lock (lock2)\n            {\n                System.Console.WriteLine(\"Method 1 holding lock1 and lock2\");\n            }\n        }\n    }\n\n    public void Method2()\n    {\n        lock (lock2) // Changed order\n        {\n            System.Console.WriteLine(\"Method 2 holding lock2\");\n            Thread.Sleep(10);\n            lock (lock1) // Changed order\n            {\n                System.Console.WriteLine(\"Method 2 holding lock2 and lock1\");\n            }\n        }\n    }\n}",
+        "hint": "Deadlock situations occur when threads are waiting indefinitely for resources held by other threads. A common cause is inconsistent lock acquisition order. Ensure all threads acquire multiple locks in the same order."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Resource Leak",
+        "description": "Missing `try-finally` for `ReaderWriterLockSlim` (Lang: DotNet, Q19)",
+        "buggyCode": "using System.Threading;\nusing System.Collections.Generic;\n\npublic class ConcurrentCache\n{\n    private ReaderWriterLockSlim _cacheLock = new ReaderWriterLockSlim();\n    private Dictionary<string, object> _data = new System.Collections.Generic.Dictionary<string, object>();\n\n    public object Get(string key)\n    {\n        _cacheLock.EnterReadLock();\n        return _data[key];\n    }\n\n    public void Set(string key, object value)\n    {\n        _cacheLock.EnterWriteLock();\n        _data[key] = value;\n    }\n}",
+        "correctCode": "using System.Threading;\nusing System.Collections.Generic;\n\npublic class ConcurrentCache\n{\n    private ReaderWriterLockSlim _cacheLock = new ReaderWriterLockSlim();\n    private Dictionary<string, object> _data = new System.Collections.Generic.Dictionary<string, object>();\n\n    public object Get(string key)\n    {\n        _cacheLock.EnterReadLock();\n        try\n        {\n            return _data[key];\n        }\n        finally\n        {\n            _cacheLock.ExitReadLock();\n        }\n    }\n\n    public void Set(string key, object value)\n    {\n        _cacheLock.EnterWriteLock();\n        try\n        {\n            _data[key] = value;\n        }\n        finally\n        {\n            _cacheLock.ExitWriteLock();\n        }\n    }\n}",
+        "hint": "When using `ReaderWriterLockSlim`, it's crucial to always release the lock in a `finally` block to prevent deadlocks and ensure correct synchronization, even if exceptions occur within the `try` block. Better yet, use `using (_cacheLock.ReadLock())` and `using (_cacheLock.WriteLock())`."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Concurrency Bug",
+        "description": "Missing `try-finally` for `ReaderWriterLockSlim` (Lang: DotNet, Q20)",
+        "buggyCode": "using System.Threading;\n\npublic class DataStore\n{\n    private ReaderWriterLockSlim _lock = new ReaderWriterLockSlim();\n    private int _data = 0;\n\n    public int ReadData()\n    {\n        _lock.EnterReadLock();\n        return _data;\n    }\n\n    public void WriteData(int value)\n    {\n        _lock.EnterWriteLock();\n        _data = value;\n    }\n}",
+        "correctCode": "using System.Threading;\n\npublic class DataStore\n{\n    private ReaderWriterLockSlim _lock = new ReaderWriterLockSlim();\n    private int _data = 0;\n\n    public int ReadData()\n    {\n        _lock.EnterReadLock();\n        try\n        {\n            return _data;\n        }\n        finally\n        {\n            _lock.ExitReadLock();\n        }\n    }\n\n    public void WriteData(int value)\n    {\n        _lock.EnterWriteLock();\n        try\n        {\n            _data = value;\n        }\n        finally\n        {\n            _lock.ExitWriteLock(); // Ensure release even on exception\n        }\n    }\n}",
+        "hint": "Always ensure that `ReaderWriterLockSlim` locks are released, even if an exception occurs during the protected operation. Using a `finally` block or the `using` statement (with `_lock.EnterReadLock()`/`_lock.EnterWriteLock()` in a custom disposable wrapper) guarantees release."
+      }
+    ],
+    "hard": [
+      {
+        "language": "DotNet",
+        "bugType": "Concurrency Bug",
+        "description": "Concurrency issue with `lock` statement (Lang: DotNet, Q1)",
+        "buggyCode": "using System.Threading;\n\npublic class ThreadSafeCounter\n{\n    private int _count = 0;\n    // Missing a lock object\n\n    public void Increment()\n    {\n        _count++; // Not thread-safe\n    }\n\n    public int GetCount()\n    {\n        return _count;\n    }\n}",
+        "correctCode": "using System.Threading;\n\npublic class ThreadSafeCounter\n{\n    private int _count = 0;\n    private readonly object _lock = new object();\n\n    public void Increment()\n    {\n        lock (_lock)\n        {\n            _count++;\n        }\n    }\n\n    public int GetCount()\n    {\n        lock (_lock)\n        {\n            return _count;\n        }\n    }\n}",
+        "hint": "Operations on shared mutable data must be protected by a lock to prevent race conditions. The `lock` statement in C# requires an object to synchronize access."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Asynchronous Logic Error",
+        "description": "Async void methods causing issues (Lang: DotNet, Q2)",
+        "buggyCode": "using System.Threading.Tasks;\nusing System;\n\npublic class AsyncExample\n{\n    public async void DoSomethingAsync() // Async void is problematic\n    {\n        Console.WriteLine(\"Starting async operation...\");\n        await Task.Delay(100);\n        throw new Exception(\"Error in async void\"); // Exception cannot be caught easily\n    }\n\n    public async Task CallAsyncOperation()\n    {\n        try\n        {\n            DoSomethingAsync(); // No await, so control returns immediately\n        }\n        catch (Exception ex)\n        {\n            Console.WriteLine($\"Error caught: {ex.Message}\");\n        }\n    }\n}",
+        "correctCode": "using System.Threading.Tasks;\nusing System;\n\npublic class AsyncExample\n{\n    // Async method should return Task or Task<T>\n    public async Task DoSomethingAsync()\n    {\n        Console.WriteLine(\"Starting async operation...\");\n        await Task.Delay(100);\n        Console.WriteLine(\"Async operation completed.\");\n    }\n\n    public async Task CallAsyncOperation()\n    {\n        try\n        {\n            await DoSomethingAsync();\n        }\n        catch (Exception ex)\n        {\n            Console.WriteLine($\"Error caught: {ex.Message}\");\n        }\n    }\n}",
+        "hint": "`async void` methods are fire-and-forget and make exception handling difficult, as exceptions thrown from them cannot be caught by a regular `try-catch` block. They should generally only be used for event handlers. For other asynchronous operations, return `Task` or `Task<TResult>`."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Resource Leak",
+        "description": "Resource leak with `Socket` not being disposed (Lang: DotNet, Q3)",
+        "buggyCode": "using System.Net.Sockets;\nusing System.Text;\n\npublic class SocketClient\n{\n    public void SendMessage(string host, int port, string message)\n    {\n        Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);\n        socket.Connect(host, port);\n        byte[] data = Encoding.ASCII.GetBytes(message);\n        socket.Send(data);\n        // Missing socket.Close() or socket.Dispose()\n    }\n}",
+        "correctCode": "using System.Net.Sockets;\nusing System.Text;\n\npublic class SocketClient\n{\n    public void SendMessage(string host, int port, string message)\n    {\n        using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))\n        {\n            socket.Connect(host, port);\n            byte[] data = Encoding.ASCII.GetBytes(message);\n            socket.Send(data);\n        }\n    }\n}",
+        "hint": "Unmanaged resources like network sockets must be explicitly closed or disposed of to prevent resource leaks. The `using` statement ensures `Dispose()` is called automatically, even if an exception occurs."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Asynchronous Logic Error",
+        "description": "Capturing `this` in async lambdas without `ConfigureAwait(false)` (Lang: DotNet, Q4)",
+        "buggyCode": "using System;\nusing System.Threading.Tasks;\n\npublic class MyViewModel\n{\n    public string Status { get; set; } = \"Ready\";\n\n    public async Task LoadDataAsync()\n    {\n        // This lambda captures the current SynchronizationContext\n        await Task.Delay(100); // UI thread context captured\n        Status = \"Data Loaded\"; // Might cause deadlock if awaited on UI thread\n        Console.WriteLine(Status);\n    }\n}",
+        "correctCode": "using System;\nusing System.Threading.Tasks;\n\npublic class MyViewModel\n{\n    public string Status { get; set; } = \"Ready\";\n\n    public async Task LoadDataAsync()\n    {\n        // Simulate an async operation\n        await Task.Delay(100).ConfigureAwait(false); // Avoid capturing context\n        Status = \"Data Loaded\"; // This assignment might still go to the original context if it's a UI thread\n        Console.WriteLine(Status);\n    }\n}",
+        "hint": "When `await` is used without `ConfigureAwait(false)` in an async method, it attempts to resume execution on the original `SynchronizationContext` (e.g., UI thread). This can lead to deadlocks if the UI thread is blocked waiting for the async method to complete. Use `ConfigureAwait(false)` when possible to avoid this."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Concurrency Bug",
+        "description": "Incorrect use of `Monitor.Wait` and `Monitor.Pulse` (Lang: DotNet, Q17)",
+        "buggyCode": "using System.Collections.Generic;\nusing System.Threading;\n\npublic class BoundedBuffer\n{\n    private Queue<string> _buffer = new Queue<string>();\n    private readonly int _maxSize = 10;\n    private readonly object _lock = new object();\n\n    public void AddItem(string item)\n    {\n        lock (_lock)\n        {\n            if (_buffer.Count == _maxSize) // Using if instead of while\n            {\n                Monitor.Wait(_lock);\n            }\n            _buffer.Enqueue(item);\n            Monitor.Pulse(_lock); // Only pulses one waiting thread\n        }\n    }\n\n    public string GetItem()\n    {\n        lock (_lock)\n        {\n            if (_buffer.Count == 0) // Using if instead of while\n            {\n                Monitor.Wait(_lock);\n            }\n            string item = _buffer.Dequeue();\n            Monitor.Pulse(_lock); // Only pulses one waiting thread\n            return item;\n        }\n    }\n}",
+        "correctCode": "using System.Collections.Generic;\nusing System.Threading;\n\npublic class BoundedBuffer\n{\n    private Queue<string> _buffer = new Queue<string>();\n    private readonly int _maxSize = 10;\n    private readonly object _lock = new object();\n\n    public void AddItem(string item)\n    {\n        lock (_lock)\n        {\n            while (_buffer.Count == _maxSize) // Use while loop to guard against spurious wakeups\n            {\n                Monitor.Wait(_lock);\n            }\n            _buffer.Enqueue(item);\n            Monitor.PulseAll(_lock); // PulseAll to wake up all waiting consumers\n        }\n    }\n\n    public string GetItem()\n    {\n        lock (_lock)\n        {\n            while (_buffer.Count == 0) // Use while loop\n            {\n                Monitor.Wait(_lock);\n            }\n            string item = _buffer.Dequeue();\n            Monitor.PulseAll(_lock); // PulseAll to wake up all waiting producers\n            return item;\n        }\n    }\n}",
+        "hint": "When using `Monitor.Wait`, always wrap it in a `while` loop to recheck the condition after waking up (to handle spurious wakeups). Use `Monitor.PulseAll` instead of `Monitor.Pulse` to notify all waiting threads, especially in producer-consumer scenarios, to avoid deadlocks or starvation."
+      },
+      {
+        "language": "DotNet",
+        "bugType": "Concurrency Bug",
+        "description": "Non-volatile field leading to stale data (Lang: DotNet, Q19)",
+        "buggyCode": "using System;\nusing System.Threading;\n\npublic class CacheUpdater\n{\n    private bool _dataReady = false;\n\n    public void MarkDataReady()\n    {\n        _dataReady = true;\n    }\n\n    public bool IsDataReady()\n    {\n        return _dataReady;\n    }\n}",
+        "correctCode": "using System;\nusing System.Threading;\n\npublic class CacheUpdater\n{\n    private volatile bool _dataReady = false;\n\n    public void MarkDataReady()\n    {\n        _dataReady = true;\n    }\n\n    public bool IsDataReady()\n    {\n        return _dataReady;\n    }\n}",
+        "hint": "The `volatile` keyword ensures that reads and writes to a field are always performed against main memory, preventing compiler optimizations that might cache the value in a CPU register, leading to stale data being read by other threads. For more complex scenarios or non-primitive types, use `lock` or other synchronization primitives."
+      }
+    ]
+  }
+}
